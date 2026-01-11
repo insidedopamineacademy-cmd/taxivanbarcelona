@@ -1,0 +1,858 @@
+{
+  "home": {
+    "title": "Taxi Van Barcelona",
+    "subtitle": "Reserva rápida por WhatsApp • Aeropuerto • Cruceros • Larga distancia",
+    "hero": {
+      "eyebrow": "Barcelona • Vans de 4–8 plazas • Soporte 24/7",
+      "title": "Taxi Van Barcelona para traslados al aeropuerto, cruceros y larga distancia",
+      "p1": "¿Necesitas una ",
+      "bold": "taxi van espaciosa en Barcelona",
+      "p2": "? Reserva en segundos por WhatsApp o por teléfono. Ofrecemos vans limpias de 4–8 plazas, conductores profesionales y precios claros para que tu viaje sea fácil desde el primer mensaje.",
+      "cta": "Escríbenos por WhatsApp para reservar rápido",
+      "whatsappAria": "Chatea con nosotros por WhatsApp para reservar rápido",
+      "pills": {
+        "fixedPricing": "Precio fijo",
+        "meetGreet": "Recepción (meet & greet)",
+        "airportWait": "1 hora de espera en el aeropuerto",
+        "multilingual": "Conductores multilingües"
+      }
+    },
+    "popularServices": {
+      "title": "Servicios populares",
+      "subtitle": "Elige tu tipo de traslado y reserva en menos de un minuto.",
+      "items": {
+        "airport": {
+          "title": "Traslados al Aeropuerto de Barcelona",
+          "desc": "Recogida y regreso en El Prat (T1/T2) con espacio para equipaje."
+        },
+        "cruise": {
+          "title": "Recogida en el Puerto de Cruceros",
+          "desc": "Terminales del puerto → hotel, aeropuerto o dirección en la ciudad."
+        },
+        "longDistance": {
+          "title": "Traslados de larga distancia",
+          "desc": "Vans cómodas para Sitges, Girona, Tarragona y mucho más."
+        }
+      }
+    },
+    "intro": {
+      "title": "Tu viaje, a tu manera en Barcelona",
+      "p1": "Tanto si viajas solo como en grupo, Taxi Van Barcelona tiene el vehículo ideal para tu trayecto. Operamos ",
+      "bold": "taxis van modernos de 4, 6, 7 y 8 plazas",
+      "p2": "—limpios, amplios y bien mantenidos. Desde trayectos urbanos hasta rutas largas por España, nos enfocamos en la comodidad, la puntualidad y una comunicación clara.",
+      "cards": {
+        "fastBooking": {
+          "title": "Reserva rápida",
+          "desc": "Escríbenos por WhatsApp y recibe confirmación en poco tiempo—ideal para turistas en movimiento."
+        },
+        "comfortFirst": {
+          "title": "Vans pensadas para la comodidad",
+          "desc": "Más espacio para maletas, carritos y grupos—para que todos viajen relajados."
+        },
+        "proDrivers": {
+          "title": "Conductores profesionales",
+          "desc": "Conocimiento local, conducción segura y recogidas puntuales—de día o de noche."
+        }
+      }
+    },
+    "services": {
+      "title": "Traslados en los que nos especializamos",
+      "subtitle": "Aeropuerto, cruceros y larga distancia—confort y fiabilidad en cada ruta.",
+      "cards": {
+        "airport": {
+          "title": "Taxi van al Aeropuerto de Barcelona",
+          "desc": "Traslados al Aeropuerto El Prat (BCN) con recepción (meet & greet) y amplio espacio para equipaje."
+        },
+        "cruise": {
+          "title": "Traslado al Puerto de Cruceros",
+          "desc": "Recogida en el puerto y traslado directo a tu hotel, aeropuerto o destino."
+        },
+        "longDistance": {
+          "title": "Traslados de larga distancia",
+          "desc": "Vans cómodas para rutas como Sitges, Girona, Tarragona, Costa Brava y más."
+        },
+        "cta": {
+          "explore": "Ver detalles",
+          "bookFaster": "Reservar más rápido"
+        }
+      }
+    },
+    "fleet": {
+      "title": "Opciones de nuestra flota",
+      "subtitle": "Elige el vehículo ideal para tu traslado: taxis estándar, coches premium y taxis van amplios para grupos.",
+      "imageAlt": "{title} en Barcelona",
+      "requestAvailability": "Consultar disponibilidad →",
+      "requestAvailabilityAria": "Consultar disponibilidad de {title} por WhatsApp",
+      "fastReply": "Respuesta rápida",
+      "cta": "Te ayudamos a elegir el vehículo perfecto",
+      "items": {
+        "standardTaxi": {
+          "title": "Taxi estándar (traslados urbanos rápidos)",
+          "meta": "1–3 pasajeros • recorridos por Barcelona",
+          "desc": "Ideal para trayectos rápidos en Barcelona con recogida ágil. Perfecto para viajeros solos o parejas que buscan un traslado directo y cómodo."
+        },
+        "premiumTaxi": {
+          "title": "Taxi premium (comodidad de lujo)",
+          "meta": "Negocios • reuniones • eventos especiales",
+          "desc": "Una opción de confort premium para viajes corporativos, congresos y llegadas elegantes. Trayecto silencioso, servicio profesional y un toque exclusivo."
+        },
+        "standardVan": {
+          "title": "Taxi van estándar (4–7 pasajeros)",
+          "meta": "Familias y grupos • más espacio para equipaje",
+          "desc": "Nuestra opción más popular para traslados al aeropuerto y recogidas en el puerto. Taxis van amplios de 4–7 pasajeros con espacio para maletas, carritos y viajes en grupo."
+        },
+        "fordTourneo": {
+          "title": "Ford Tourneo Custom (hasta 8 pasajeros)",
+          "meta": "Máximo espacio • traslados de larga distancia",
+          "desc": "Perfecto para grupos grandes con maletas. Ford Tourneo Custom hasta 8 pasajeros—ideal para rutas de larga distancia por Cataluña."
+        }
+      }
+    },
+    "whyChoose": {
+      "title": "¿Por qué elegir Taxi Van Barcelona?",
+      "subtitle": "Estamos pensados para turistas y grupos que quieren espacio, puntualidad y un transporte sin estrés. Esto es lo que obtienes al viajar con nosotros.",
+      "items": {
+        "vans": {
+          "title": "Vans amplias + espacio para equipaje",
+          "desc": "Vans cómodas de 4–8 plazas con espacio para maletas, carritos y equipamiento—sin sacrificar comodidad."
+        },
+        "fastLane": {
+          "title": "Taxi rápido para aeropuerto / ciudad",
+          "desc": "Evita el tráfico con nuestro servicio ágil—ideal para conexiones, vuelos y traslados con tiempo ajustado."
+        },
+        "multilingual": {
+          "title": "Conductores multilingües",
+          "desc": "Comunicación clara y trato amable para viajeros internacionales."
+        },
+        "pricing": {
+          "title": "Precios transparentes",
+          "desc": "Sin sorpresas—presupuestos claros y tarifas justas en rutas populares. Precios desde 35€."
+        },
+        "meetGreet": {
+          "title": "Recepción (meet & greet)",
+          "desc": "Recogida profesional—especialmente útil en aeropuerto y puerto."
+        },
+        "availability": {
+          "title": "Disponibilidad 24/7",
+          "desc": "Vuelos temprano, llegadas tarde y cambios de última hora—estamos listos."
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "Cómo funciona la reserva",
+      "subtitle": "Pasos simples, confirmación rápida y una recogida sin complicaciones. Así de fácil.",
+      "stepLabel": "PASO",
+      "steps": {
+        "s1": {
+          "title": "Envía los detalles del viaje",
+          "desc": "Recogida + destino, pasajeros, equipaje y hora. WhatsApp es lo más rápido."
+        },
+        "s2": {
+          "title": "Recibe un presupuesto claro",
+          "desc": "Confirmamos precio y disponibilidad—para que sepas exactamente qué esperar."
+        },
+        "s3": {
+          "title": "Disfruta del trayecto",
+          "desc": "Tu conductor llega puntual y ayuda con el equipaje—viaja sin estrés."
+        }
+      }
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "subtitle": "Respuestas a las dudas más comunes de viajeros internacionales.",
+      "items": {
+        "fixedPricing": {
+          "q": "¿Ofrecen precio fijo?",
+          "a": "Sí. En rutas populares damos presupuestos claros para que sepas el coste antes de viajar."
+        },
+        "passengers": {
+          "q": "¿Cuántos pasajeros pueden llevar sus vans?",
+          "a": "Normalmente transportamos 4–8 pasajeros, según el vehículo y el equipaje."
+        },
+        "whatsapp24": {
+          "q": "¿Se puede reservar por WhatsApp las 24 horas?",
+          "a": "Sí. WhatsApp es la forma más rápida de reservar, ajustar horarios o hacer consultas."
+        },
+        "cruisePickup": {
+          "q": "¿Hacen recogidas en el puerto de cruceros?",
+          "a": "Sí. Recogemos en las terminales de cruceros de Barcelona y te llevamos directamente a tu destino."
+        }
+      },
+      "cta": "¿Aún tienes dudas? Contáctanos"
+    },
+    "ctaStrip": {
+      "title": "¿Listo para reservar tu taxi van en Barcelona?",
+      "subtitle": "Evita colas y la incertidumbre. Llama o escríbenos por WhatsApp para confirmación rápida y un viaje cómodo—al aeropuerto, al puerto o a larga distancia.",
+      "buttons": {
+        "callNow": "Llamar ahora",
+        "whatsapp": "WhatsApp",
+        "contact": "Contacto"
+      }
+    }
+  },
+  "airport": {
+    "hero": {
+      "eyebrow": "Aeropuerto Barcelona El Prat (T1 y T2) • 24/7",
+      "title": "Taxi van al Aeropuerto de Barcelona — Traslados fiables para grupos",
+      "desc": "Evita las largas colas de taxi en El Prat. Reserva con antelación una van espaciosa de 4–8 plazas con precio fijo, conductores profesionales y sillas infantiles gratuitas—llega y continúa tu viaje sin estrés.",
+      "call": "Llamar para reservar",
+      "whatsapp": "WhatsApp",
+      "features": {
+        "fixed": "✓ Precio fijo",
+        "meet": "✓ Recepción (meet & greet)",
+        "luggage": "✓ Espacio para equipaje de grupos",
+        "child": "✓ Sillas infantiles gratuitas"
+      }
+    },
+    "includes": {
+      "title": "Nuestro servicio de taxi al aeropuerto incluye",
+      "items": {
+        "vans": {
+          "title": "Vans de 4–8 plazas",
+          "desc": "Ideales para familias y grupos."
+        },
+        "luggage": {
+          "title": "Espacio para equipaje",
+          "desc": "Maletas, carritos y más."
+        },
+        "pricing": {
+          "title": "Precio fijo",
+          "desc": "Desde 34 € (según la ruta)."
+        },
+        "child": {
+          "title": "Sillas infantiles gratuitas",
+          "desc": "Bajo petición—sin coste adicional."
+        },
+        "door": {
+          "title": "Servicio puerta a puerta",
+          "desc": "Aeropuerto → hotel/apartamento."
+        }
+      }
+    },
+    "terminals": {
+      "title": "Taxi van desde el Aeropuerto de Barcelona — Terminal 1 y Terminal 2",
+      "desc": "Recogemos en ambas terminales y te llevamos a cualquier punto de Barcelona y alrededores. Nuestros conductores siguen tu vuelo para ofrecerte un inicio de viaje cómodo y sin complicaciones.",
+      "listTitle": "Destinos populares:",
+      "items": {
+        "hotels": "• Hoteles en Ciutat Vella, Eixample, Sants",
+        "port": "• Puerto de cruceros (Moll Adossat)",
+        "apartments": "• Apartamentos privados y Airbnbs",
+        "daytrips": "• Excursiones: Sitges, Costa Brava, Girona, Tarragona"
+      }
+    },
+    "how": {
+      "title": "Cómo funciona la reserva",
+      "steps": {
+        "1": "Llama o escríbenos por WhatsApp con hora de recogida, terminal y destino.",
+        "2": "Confirmamos el precio fijo y los datos del conductor.",
+        "3": "Reúnete con tu conductor y viaja cómodamente de puerta a puerta."
+      },
+      "call": "Llamar ahora",
+      "whatsapp": "WhatsApp"
+    },
+    "links": {
+      "intro": "También ofrecemos traslados al puerto de cruceros y viajes de larga distancia—descubre nuestros servicios:",
+      "cruise": "Recogida en el Puerto de Cruceros",
+      "faqs": "Preguntas frecuentes",
+      "contact": "Contacto"
+    },
+    "seo": {
+      "title": "Taxi van al Aeropuerto de Barcelona — Qué puedes esperar",
+      "p1": "Si aterrizas en el Aeropuerto de Barcelona El Prat (BCN) y buscas una recogida sin complicaciones, nuestros taxi vans están pensados para familias y grupos. Disfruta de amplio espacio para equipaje, comunicación clara y un traslado puerta a puerta a tu hotel, apartamento, puerto de cruceros o cualquier destino en Cataluña.",
+      "p2": "Supervisamos los horarios de los vuelos y planificamos la recogida para que no pierdas tiempo en la terminal. Envíanos los detalles de tu viaje y confirmamos disponibilidad rápidamente — WhatsApp es la opción más rápida.",
+      "faqTitle": "Preguntas frecuentes",
+      "faq": {
+        "q1": "¿Ofrecen precio fijo para traslados al aeropuerto?",
+        "a1": "Sí. En rutas habituales confirmamos un precio claro antes de la recogida, según pasajeros y equipaje.",
+        "q2": "¿Cuántos pasajeros puede llevar el taxi van al aeropuerto?",
+        "a2": "La mayoría de los traslados son para 3–8 pasajeros, según el tipo de van y el equipaje.",
+        "q3": "¿Dónde nos encontrará el conductor en el aeropuerto de BCN?",
+        "a3": "Confirmamos con antelación el terminal (T1/T2) y el punto de encuentro. Si incluye meet & greet, enviamos instrucciones claras por WhatsApp.",
+        "q4": "¿Pueden llevarnos del aeropuerto al puerto de cruceros?",
+        "a4": "Sí — el traslado del aeropuerto a las terminales de cruceros de Barcelona es uno de nuestros servicios más solicitados."
+      }
+    }
+  },
+  "long": {
+    "hero": {
+      "eyebrow": "Barcelona • Cataluña • España",
+      "title": "Traslados en taxi van de larga distancia desde Barcelona",
+      "desc": "Viaja más allá de Barcelona con total comodidad en taxis van amplios de 4–8 plazas. Perfecto para rutas de larga distancia, reservas por horas y viajes flexibles por Cataluña y España.",
+      "call": "Llamar",
+      "whatsapp": "WhatsApp",
+      "features": {
+        "comfort": "✓ Vans cómodas de 4–8 plazas",
+        "hourly": "✓ Reserva por horas y larga distancia",
+        "drivers": "✓ Conductores profesionales multilingües",
+        "pricing": "✓ Precio fijo bajo solicitud",
+        "vans": "✓ Vans amplias de 4–8 plazas",
+        "door": "✓ Servicio puerta a puerta",
+        "fixed": "✓ Precio fijo bajo solicitud"
+      }
+    },
+    "areas": {
+      "title": "Rutas populares de larga distancia desde Barcelona",
+      "desc": "Realizamos diariamente traslados en taxi van desde Barcelona a ciudades cercanas, pueblos costeros y destinos turísticos.",
+      "items": {
+        "sitges": "Sitges",
+        "girona": "Girona",
+        "tarragona": "Tarragona",
+        "costabrava": "Costa Brava",
+        "montserrat": "Montserrat",
+        "laroca": "La Roca Village"
+      },
+      "list": {
+        "bcnAirport": "Aeropuerto Barcelona El Prat (BCN)",
+        "gironaAirport": "Aeropuerto de Girona (GRO)",
+        "reusAirport": "Aeropuerto de Reus (REU)",
+        "sants": "Estación de Sants (AVE / Renfe)",
+        "franca": "Estació de França",
+        "andorra": "Andorra (excursiones de un día)",
+        "portaventura": "PortAventura",
+        "montserrat": "Montserrat",
+        "laroca": "La Roca Village"
+      }
+    },
+    "hourly": {
+      "title": "Reserva de taxi van por horas",
+      "desc": "¿Necesitas una van durante unas horas en lugar de un solo trayecto? Reserva por horas para reuniones, compras, eventos, bodas o viajes con varias paradas.",
+      "items": {
+        "business": "Reuniones de negocios y congresos",
+        "shopping": "Compras y outlets",
+        "events": "Eventos y bodas",
+        "city": "Varias paradas en la ciudad",
+        "family": "Excursiones familiares"
+      },
+      "note": "Envíanos punto de recogida, fecha, número de horas y pasajeros — confirmamos disponibilidad rápidamente."
+    },
+    "includes": {
+      "title": "Qué incluye tu traslado de larga distancia",
+      "items": {
+        "private": "Servicio privado (sin compartir)",
+        "vans": "Taxis van de 4–8 plazas",
+        "luggage": "Espacio para equipaje incluido",
+        "drivers": "Conductores profesionales",
+        "pricing": "Precio fijo bajo solicitud"
+      },
+      "i1": "Servicio privado (sin compartir)",
+      "i2": "Taxis van de 4–8 plazas",
+      "i3": "Espacio para equipaje incluido",
+      "i4": "Conductores profesionales",
+      "i5": "Precio fijo bajo solicitud"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": {
+        "pricing": {
+          "q": "¿Ofrecen precio fijo para viajes de larga distancia?",
+          "a": "Sí. Para la mayoría de rutas podemos confirmar un precio fijo por adelantado según la distancia, los pasajeros y el equipaje."
+        },
+        "capacity": {
+          "q": "¿Cuántos pasajeros pueden viajar en sus vans?",
+          "a": "La mayoría de viajes de larga distancia admiten 4–8 pasajeros, según el equipaje."
+        },
+        "stops": {
+          "q": "¿Podemos añadir paradas en el trayecto?",
+          "a": "Sí. Indícanos tus paradas planificadas y confirmamos la mejor opción y el precio."
+        },
+        "hourly": {
+          "q": "¿Tienen reserva por horas?",
+          "a": "Sí. La reserva por horas está disponible para horarios flexibles y múltiples paradas."
+        }
+      },
+      "q1": "¿Ofrecen precio fijo para viajes de larga distancia?",
+      "a1": "Sí. Para la mayoría de rutas podemos confirmar un precio fijo por adelantado según la distancia, los pasajeros y el equipaje.",
+      "q2": "¿Cuántos pasajeros pueden viajar en sus vans?",
+      "a2": "La mayoría de viajes de larga distancia admiten 4–8 pasajeros, según el equipaje.",
+      "q3": "¿Podemos añadir paradas en el trayecto?",
+      "a3": "Sí. Indícanos tus paradas planificadas y confirmamos la mejor opción y el precio.",
+      "q4": "¿Tienen reserva por horas?",
+      "a4": "Sí. La reserva por horas está disponible para horarios flexibles y múltiples paradas."
+    },
+    "cta": {
+      "callNow": "Llamar ahora",
+      "whatsappQuote": "WhatsApp para presupuesto",
+      "call": "Llamar",
+      "whatsapp": "WhatsApp"
+    },
+
+    "trust": {
+      "title": "Diseñado para la comodidad en viajes largos",
+      "desc": "En rutas largas necesitas algo más que un trayecto. Priorizamos comodidad, vehículos limpios y conductores puntuales para que tu viaje sea tranquilo de principio a fin.",
+      "b1": "• Asientos amplios y más espacio para las piernas",
+      "b2": "• Espacio para equipaje para familias y grupos",
+      "b3": "• Conducción suave y servicio profesional",
+      "b4": "• Recogida y traslado puerta a puerta",
+      "b5": "• Disponibilidad 24/7, incluidos fines de semana y festivos"
+    },
+    "how": {
+      "title": "Cómo reservar un taxi de larga distancia",
+      "steps": {
+        "1": "Envía recogida, destino, fecha/hora, pasajeros y equipaje.",
+        "2": "Confirmamos el tamaño del vehículo y el precio (precio fijo disponible bajo solicitud).",
+        "3": "Tu conductor llega a tiempo y te lleva directamente a tu destino."
+      }
+    },
+    "links": {
+      "intro": "¿También necesitas aeropuerto o crucero? Explora:",
+      "airport": "Taxi Aeropuerto",
+      "cruise": "Puerto de Cruceros",
+      "contact": "Contacto"
+    }
+  },
+  "cruise": {
+    "hero": {
+      "eyebrow": "Puerto de Cruceros de Barcelona • Moll Adossat & Port Vell • 24/7",
+      "title": "Traslado en taxi desde el Puerto de Cruceros de Barcelona",
+      "desc": "Recogida directa en el puerto de cruceros con taxis van de 4–8 plazas. Traslados cómodos a hoteles, aeropuerto o tours por Barcelona, con precio fijo y conductores profesionales.",
+      "call": "Llamar",
+      "whatsapp": "WhatsApp",
+      "mobileCta": "Reserva rápida por WhatsApp",
+      "imageAlt": "Recogida en el puerto de cruceros de Barcelona con taxi van",
+      "imageCaption": "Puerto de Cruceros de Barcelona – Moll Adossat",
+      "features": {
+        "tracking": "✓ Seguimiento del crucero",
+        "door": "✓ Servicio puerta a puerta",
+        "pricing": "✓ Precio fijo",
+        "luggage": "✓ Espacio para equipaje",
+        "fixed": "✓ Tarifas fijas"
+      }
+    },
+    "includes": {
+      "title": "Qué incluye tu traslado desde el puerto de cruceros",
+      "items": {
+        "vans": {
+          "title": "Vans de 4–8 plazas",
+          "desc": "Taxis cómodos para familias y grupos de crucero."
+        },
+        "luggage": {
+          "title": "Gran capacidad de equipaje",
+          "desc": "Espacio suficiente para maletas de crucero."
+        },
+        "pricing": {
+          "title": "Precio fijo desde 34€",
+          "desc": "Confirmado antes de la recogida—sin sorpresas."
+        },
+        "child": {
+          "title": "Sillas infantiles gratuitas",
+          "desc": "Disponibles bajo petición."
+        },
+        "door": {
+          "title": "Servicio puerta a puerta",
+          "desc": "Puerto → hotel, aeropuerto o destino."
+        }
+      },
+      "i1": "🚐 Vans de 4–8 plazas",
+      "i2": "🧳 Gran capacidad de equipaje",
+      "i3": "💰 Precio fijo desde 34€",
+      "i4": "👶 Sillas infantiles gratuitas",
+      "i5": "📍 Servicio puerta a puerta"
+    },
+    "whyChoose": {
+      "title": "Por qué elegir nuestro taxi desde el puerto de cruceros",
+      "items": {
+        "pickup": "Recogida directa en Moll Adossat y Port Vell",
+        "vans": "Vans de 4–8 plazas con amplio espacio",
+        "drivers": "Conductores profesionales y multilingües",
+        "pricing": "Precio fijo garantizado"
+      }
+    },
+    "why": {
+      "title": "¿Por qué elegir nuestro taxi en el puerto de cruceros?",
+      "p1": "Las llegadas de los cruceros pueden ser impredecibles, pero tu traslado no debería serlo. Seguimos el horario del barco y ajustamos la recogida para que tu conductor esté listo cuando desembarques.",
+      "b1": "✅ Recogida directa en Moll Adossat y Port Vell",
+      "b2": "✅ Vans de 4 a 8 plazas para familias y grupos",
+      "b3": "✅ Espacio amplio para equipaje de crucero",
+      "b4": "✅ Conductores profesionales y multilingües",
+      "b5": "✅ Precio fijo — sin sorpresas"
+    },
+    "where": {
+      "title": "A dónde te llevamos",
+      "i1": "• Hoteles y apartamentos en Barcelona",
+      "i2": "• Aeropuerto de Barcelona (El Prat)",
+      "i3": "• Estaciones de tren (Sants, França)",
+      "i4": "• Viajes de larga distancia por España"
+    },
+    "tours": {
+      "title": "Tours por Barcelona para pasajeros de crucero",
+      "p1": "¿Solo estás unas horas en Barcelona? Reserva un tour por la ciudad directamente desde la terminal. Te recogemos en Moll Adossat o Port Vell y adaptamos la ruta a tu horario—y te devolvemos al barco a tiempo.",
+      "b1": "• Recogida flexible en la terminal de cruceros",
+      "b2": "• Rutas a medida: Sagrada Família, Barrio Gótico, Montjuïc, playas",
+      "b3": "• Vans cómodas de 4–8 plazas con espacio para equipaje",
+      "b4": "• Precio fijo confirmado antes de empezar",
+      "ideasTitle": "Ideas de tours populares",
+      "i1": "⭐ Tour de imprescindibles (2–3 horas)",
+      "i2": "🕓 Tour de medio día (4 horas)",
+      "i3": "🛍️ Compras + sightseeing (La Roca Village bajo petición)",
+      "i4": "👨‍👩‍👧‍👦 Rutas familiares (sillas infantiles disponibles)",
+      "items": {
+        "highlights": "Tour de puntos destacados (2–3 horas)",
+        "halfday": "Tour de medio día por la ciudad (4 horas)",
+        "shopping": "Compras y sightseeing (La Roca Village bajo petición)",
+        "family": "Rutas familiares (sillas infantiles disponibles)"
+      },
+      "note": "Indícanos el nombre del barco, la hora de atraque y los lugares imprescindibles—te proponemos la mejor ruta."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": {
+        "pricing": {
+          "q": "¿Ofrecen precio fijo para traslados desde el puerto de cruceros?",
+          "a": "Sí. Confirmamos un precio claro antes de la recogida según pasajeros y equipaje."
+        },
+        "meeting": {
+          "q": "¿Dónde nos encontrará el conductor en el puerto?",
+          "a": "Confirmamos la terminal exacta y el punto de encuentro con antelación y enviamos instrucciones por WhatsApp."
+        },
+        "tour": {
+          "q": "¿Podemos hacer un tour por la ciudad y volver al barco a tiempo?",
+          "a": "Sí. Planificamos la ruta según el horario del crucero para garantizar el regreso puntual."
+        },
+        "capacity": {
+          "q": "¿Cuántos pasajeros caben en un taxi de crucero?",
+          "a": "La mayoría de los traslados admiten de 4 a 8 pasajeros, según el equipaje."
+        }
+      },
+      "q1": "¿Ofrecen precio fijo para traslados desde el puerto de cruceros?",
+      "a1": "Sí. Confirmamos un precio fijo y claro antes de la recogida según pasajeros y equipaje.",
+      "q2": "¿Dónde nos encontrará el conductor en la terminal de cruceros?",
+      "a2": "Confirmamos el punto de encuentro exacto en Moll Adossat o Port Vell y enviamos instrucciones por WhatsApp.",
+      "q3": "¿Podemos hacer un tour por la ciudad y volver al barco a tiempo?",
+      "a3": "Claro. Planificamos el tour según el horario de atraque para que regreses con tranquilidad a tiempo.",
+      "q4": "¿Cuántos pasajeros caben en un taxi van de crucero?",
+      "a4": "Nuestros vans suelen llevar 4–8 pasajeros según las necesidades de equipaje."
+    },
+    "links": {
+      "portInfoPrefix": "¿Necesitas información oficial del puerto? Visita",
+      "portInfoName": "Port de Barcelona",
+      "airport": "Taxi Aeropuerto",
+      "faqs": "FAQs",
+      "contact": "Contacto"
+    }
+  },
+  "booking": {
+    "card": {
+      "title": "Reserva exprés",
+      "subtitle": "Introduce tu ruta — se abrirá WhatsApp con tus datos ya preparados.",
+      "pickupPlaceholder": "Recogida (hotel / dirección / terminal)",
+      "destinationPlaceholder": "Destino (hotel / aeropuerto / evento)",
+      "useMyLocationAria": "Usar mi ubicación actual para la recogida",
+      "whenLabel": "¿Cuándo?",
+      "whenNow": "Ahora",
+      "whenSchedule": "Programar",
+      "whenAsapHint": "Lo trataremos como lo antes posible.",
+      "whenChooseHint": "Elige fecha y hora.",
+      "dateLabel": "Fecha",
+      "timeLabel": "Hora",
+      "datePlaceholder": "dd/mm/aaaa",
+      "timePlaceholder": "--:--",
+      "passengersLabel": "Pasajeros",
+      "luggageLabel": "Equipaje",
+      "passengersValue": "{count} pasajero|{count} pasajeros",
+      "luggageValue": "{count} maleta|{count} maletas",
+      "etaCalculating": "Calculando ETA…",
+      "estimatedTimeLabel": "Tiempo estimado",
+      "distanceLabel": "Distancia",
+      "sendViaWhatsApp": "Enviar por WhatsApp",
+      "tip": "Consejo: usa nombres exactos de hotel/terminal para una confirmación más rápida.",
+      "errors": {
+        "missingPickup": "Por favor, indica el punto de recogida.",
+        "missingDestination": "Por favor, indica el destino.",
+        "mapsUnavailable": "Los mapas no están disponibles temporalmente. Escribe la recogida y el destino manualmente.",
+        "geolocationDenied": "El acceso a la ubicación está bloqueado. Actívalo en la configuración del navegador."
+      }
+    },
+    "whatsapp": {
+      "header": "Nueva solicitud de reserva",
+      "pickup": "Recogida",
+      "dropoff": "Destino",
+      "when": "Cuándo",
+      "passengers": "Pasajeros",
+      "luggage": "Equipaje",
+      "eta": "ETA",
+      "distance": "Distancia",
+      "notes": "Notas"
+    }
+  },
+  "privateTransfers": {
+    "meta": {
+      "title": "Traslados privados Barcelona | Servicio premium con chófer (E‑Class, V‑Class, 5 Series, Tesla)",
+      "description": "Traslados privados premium en Barcelona con vehículos ejecutivos y vans de lujo. Ideal para congresos MWC / Fira Gran Via, viajes corporativos, bodas y eventos VIP. Reserva rápida por WhatsApp.",
+      "ogTitle": "Traslados privados Barcelona | Servicio premium con chófer",
+      "ogDescription": "Traslados privados ejecutivos para congresos (MWC / Fira Gran Via), negocios y eventos VIP en Barcelona."
+    },
+    "hero": {
+      "kicker": "Barcelona • Con chófer • Ejecutivo y VIP",
+      "title": "Traslados privados premium en Barcelona",
+      "titleAccent": " — para viajes VIP, eventos y tours privados",
+      "subtitle": "Traslados con chófer para congresos, viajes VIP, eventos privados, recogidas en el aeropuerto y desplazamientos por la ciudad. Ideal para clientes de negocios y viajeros privados que valoran comodidad y discreción."
+    },
+    "when": {
+      "title": "Cuándo elegir traslados privados",
+      "subtitle": "Pensado para momentos en los que importan la comodidad, la puntualidad y la imagen — tanto para clientes de negocios como para viajeros privados.",
+      "cards": {
+        "mwc": {
+          "title": "Congresos MWC / Fira Gran Via",
+          "desc": "Llega a tiempo entre reuniones, hoteles y accesos al recinto — sin estrés ni retrasos."
+        },
+        "corporate": {
+          "title": "Viajes corporativos y ejecutivos",
+          "desc": "Servicio profesional para recoger clientes, cenas de negocios y conexiones al aeropuerto."
+        },
+        "hourly": {
+          "title": "Chófer por horas (standby)",
+          "desc": "Ideal para itinerarios con varias paradas, compras, reuniones y desplazamientos flexibles."
+        },
+        "tours": {
+          "title": "Tours privados y excursiones",
+          "desc": "Visitas cómodas a Montserrat, Sitges, Costa Brava y más."
+        },
+        "airport": {
+          "title": "Traslados al aeropuerto (T1 / T2)",
+          "desc": "Recepción (meet & greet) disponible, traslado fluido al hotel y coordinación opcional del vuelo."
+        },
+        "aviation": {
+          "title": "Aviación privada / Traslados FBO",
+          "desc": "Traslados discretos para vuelos privados y terminales VIP del aeropuerto."
+        },
+        "weddings": {
+          "title": "Bodas y eventos especiales",
+          "desc": "Llegadas premium y coordinación de transporte para invitados con apoyo discreto."
+        },
+        "business": {
+          "title": "Negocios y congresos",
+          "desc": "Traslados hotel ↔ recinto con presentación profesional y tiempos ajustados."
+        },
+        "custom": {
+          "title": "Larga distancia y rutas a medida",
+          "desc": "Traslados puerta a puerta e interurbanos con paradas flexibles.",
+          "extra1": "Traslados de larga distancia",
+          "extra2": "Rutas interurbanas personalizadas",
+          "extra3": "Viajes transfronterizos (p. ej., Andorra / Sur de Francia)",
+          "extra4": "Paradas flexibles bajo petición"
+        }
+      }
+    },
+    "fleet": {
+      "title": "Opciones de flota premium",
+      "subtitle": "Sedanes ejecutivos, vans de lujo y una opción eco—elige lo que mejor se adapte a tu viaje.",
+      "meta": "Chófer • Confort • Servicio discreto",
+      "cta": "Contáctanos para un presupuesto a medida",
+      "tags": {
+        "executiveSedan": "Sedán ejecutivo",
+        "luxuryVan": "Van de lujo",
+        "businessClass": "Clase business",
+        "ecoModel": "Model 3 / Model S"
+      }
+    },
+    "highlights": {
+      "title": "Qué obtienes con traslados privados premium",
+      "subtitle": "Esta página está pensada para viajeros de negocios y clientes VIP que necesitan un nivel superior al de un taxi regular.",
+      "bullets": [
+        "Chófer profesional y discreto",
+        "Vehículos de alto confort",
+        "Recepción (meet & greet) bajo petición",
+        "Precio fijo bajo solicitud",
+        "Coordinación con aeropuerto / recinto",
+        "Interior limpio y premium"
+      ]
+    },
+    "links": {
+      "pill": "Explora también nuestra flota de taxi para reservas por horas y traslados rápidos.",
+      "airport": "Traslados al Aeropuerto",
+      "cruise": "Recogida en el Puerto de Cruceros",
+      "longDistance": "Larga distancia"
+    }
+  },
+  "nav": {
+    "airport": "Aeropuerto",
+    "cruise": "Cruceros",
+    "longDistance": "Larga distancia",
+    "privateTransfers": "Traslados privados",
+    "about": "Sobre nosotros",
+    "contact": "Contacto",
+    "faqs": "FAQs"
+  },
+  "header": {
+    "ariaHome": "Inicio de Taxi Van Barcelona",
+    "ariaCall": "Llamar a Taxi Van Barcelona",
+    "ariaWhatsapp": "WhatsApp Taxi Van Barcelona",
+    "call": "Llamar",
+    "whatsapp": "WhatsApp",
+    "menu": "Menú",
+    "language": "Idioma",
+    "callNow": "Llamar ahora",
+    "whatsappBooking": "Reserva por WhatsApp",
+    "menuNote": "Confirmación rápida • Precios claros • Soporte 24/7",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
+  },
+  "footer": {
+    "ariaHome": "Inicio de Taxi Van Barcelona",
+    "logoAlt": "Taxi Van Barcelona",
+    "tagline": {
+      "p1": "Vans amplias de ",
+      "bold": "4–8 plazas",
+      "p2": " para el Aeropuerto de Barcelona, el puerto de cruceros y traslados de larga distancia. Presupuestos claros, conductores profesionales y reserva rápida por WhatsApp."
+    },
+    "sections": {
+      "pages": "Páginas",
+      "legal": "Legal"
+    },
+    "legal": {
+      "privacy": "Política de privacidad",
+      "terms": "Términos y condiciones"
+    },
+    "booking": {
+      "title": "Reserva rápida",
+      "desc": "Envía recogida + destino, fecha/hora, pasajeros y equipaje. Confirmamos rápidamente.",
+      "whatsapp": "WhatsApp →",
+      "call": "Llamar →"
+    },
+    "bottom": {
+      "copyright": "© {year} TaxiVanBarcelona.com — Todos los derechos reservados.",
+      "built": "Optimizado para velocidad en Next.js • Barcelona"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contacto Taxi Van Barcelona | WhatsApp, llamada y dirección",
+      "description": "Contacta con Taxi Van Barcelona por WhatsApp o teléfono 24/7. Estamos en Av Parallel 49, 08001 Barcelona. Respuestas rápidas para traslados de aeropuerto, cruceros y larga distancia.",
+      "ogTitle": "Contacto Taxi Van Barcelona",
+      "ogDescription": "Escríbenos por WhatsApp o llama 24/7 para traslados de aeropuerto, cruceros y larga distancia en Barcelona."
+    },
+    "hero": {
+      "kicker": "Respuestas rápidas • Precios claros • 24/7",
+      "title": "Contacta con Taxi Van Barcelona",
+      "subtitle": "¿Quieres reservar rápido? Escríbenos por WhatsApp o llama directamente. Respondemos rápido y confirmamos los detalles de tu viaje con claridad — para que viajes con tranquilidad.",
+      "ctaWhatsApp": "WhatsApp ahora",
+      "ctaCall": "Llamar ahora"
+    },
+    "cards": {
+      "whatsapp": {
+        "label": "WhatsApp",
+        "badge": "Recomendado",
+        "title": "Escríbenos 24/7",
+        "desc": "Respuestas rápidas, perfecto para recogidas en el aeropuerto, terminales de cruceros y viajes en grupo.",
+        "cta": "Abrir WhatsApp →"
+      },
+      "call": {
+        "label": "Llamada",
+        "title": "Habla con un conductor",
+        "desc": "Ideal para recogidas urgentes, cambios de horario o ajustes de última hora.",
+        "cta": "Llamar ahora →"
+      },
+      "email": {
+        "label": "Email",
+        "title": "Enviar una solicitud",
+        "desc": "Mejor para solicitudes corporativas, facturas o planificación de varios días.",
+        "cta": "Enviar email →"
+      }
+    },
+    "find": {
+      "title": "Dónde encontrarnos",
+      "subtitle": "Si lo prefieres, puedes abrir la ubicación al instante en Google Maps o Apple Maps.",
+      "google": "Abrir en Google Maps",
+      "apple": "Abrir en Apple Maps"
+    },
+    "links": {
+      "title": "¿Buscas un servicio específico? Explora:",
+      "airport": "Taxi Aeropuerto",
+      "cruise": "Recogida Puerto de Cruceros",
+      "longDistance": "Larga distancia"
+    }
+  },
+  "aboutTaxiVanBarcelona": {
+    "meta": {
+      "title": "Sobre Taxi Van Barcelona | Vans 4–8 plazas, aeropuerto y traslados",
+      "description": "Conoce Taxi Van Barcelona: traslados al aeropuerto, puerto de cruceros y larga distancia con vans espaciosas de 4–8 plazas, conductores profesionales y reserva rápida por WhatsApp.",
+      "ogTitle": "Sobre Taxi Van Barcelona",
+      "ogDescription": "Vans 4–8 plazas para aeropuerto, cruceros y larga distancia en Barcelona. Reserva rápida por WhatsApp."
+    },
+    "hero": {
+      "kicker": "Barcelona • Vans de 4–8 plazas • Soporte 24/7",
+      "title": "Sobre Taxi Van Barcelona",
+      "subtitle": "Ofrecemos traslados fiables en taxi van en Barcelona para turistas, familias y grupos. Desde el aeropuerto y el puerto de cruceros hasta viajes de larga distancia: priorizamos puntualidad, comunicación clara y comodidad.",
+      "ctaCall": "Llamar ahora",
+      "ctaWhatsApp": "WhatsApp",
+      "trust": [
+        "Precio fijo o taxímetro (según la ruta)",
+        "Recepción (meet & greet) disponible",
+        "Grupos y equipaje: más espacio",
+        "Sillas infantiles gratis bajo petición"
+      ],
+      "card": {
+        "title": "Pensado para viajeros internacionales",
+        "desc": "Reservas rápidas por WhatsApp, recogidas puntuales y vans amplias para que tu traslado sea sencillo desde el primer mensaje.",
+        "tags": [
+          "Aeropuerto BCN",
+          "Puerto de cruceros",
+          "Larga distancia"
+        ]
+      },
+      "caption": "Barcelona — traslados cómodos para familias y grupos"
+    },
+    "highlights": {
+      "title": "Qué nos hace diferentes",
+      "items": {
+        "space": {
+          "title": "Más espacio para grupos",
+          "desc": "Vans amplias de 4–8 plazas con espacio real para equipaje."
+        },
+        "clarity": {
+          "title": "Precios claros",
+          "desc": "Confirmación rápida y comunicación directa (WhatsApp es lo más rápido)."
+        },
+        "reliable": {
+          "title": "Servicio fiable",
+          "desc": "Conductores puntuales, recogidas coordinadas y trayectos sin estrés."
+        },
+        "tourists": {
+          "title": "Hecho para viajeros internacionales",
+          "desc": "Soporte 24/7 y atención pensada para turistas, familias y grupos."
+        }
+      }
+    },
+    "story": {
+      "title": "Nuestra misión",
+      "p1": "Taxi Van Barcelona nació para hacer que los traslados en Barcelona sean simples y cómodos para grupos. Cuando viajas con maletas, niños o en familia, un taxi normal muchas veces no es suficiente.",
+      "p2": "Por eso nos enfocamos en vans espaciosas, confirmaciones rápidas y un servicio claro desde el primer mensaje."
+    },
+    "services": {
+      "title": "En qué nos especializamos",
+      "items": {
+        "airport": {
+          "title": "Traslados al Aeropuerto (BCN)",
+          "desc": "Recogidas en T1/T2 y traslados puerta a puerta a hoteles y apartamentos."
+        },
+        "cruise": {
+          "title": "Puerto de Cruceros",
+          "desc": "Recogidas en Moll Adossat y Port Vell con coordinación sencilla."
+        },
+        "long": {
+          "title": "Larga distancia",
+          "desc": "Sitges, Girona, Tarragona, Costa Brava y rutas a medida por Cataluña."
+        }
+      }
+    },
+    "trust": {
+      "title": "Viaja con confianza",
+      "bullets": {
+        "b1": "Conductores profesionales y trato amable",
+        "b2": "Vans limpias y cómodas (4–8 plazas)",
+        "b3": "Confirmación rápida por WhatsApp",
+        "b4": "Servicio puerta a puerta",
+        "b5": "Disponibilidad 24/7"
+      }
+    },
+    "cta": {
+      "title": "¿Listo para reservar?",
+      "subtitle": "Envíanos recogida + destino, fecha/hora, pasajeros y equipaje. Confirmamos rápidamente.",
+      "call": "Llamar",
+      "whatsapp": "WhatsApp"
+    }
+  },
+  "test": {
+    "label": "ES OK"
+  }
+}
