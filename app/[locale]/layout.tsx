@@ -4,6 +4,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import "@/styles/globals.css";
 
 // Critical: Disable all caching to prevent stale translations
 export const dynamic = "force-dynamic";

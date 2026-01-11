@@ -28,6 +28,15 @@ export default async function Footer() {
     terms: `${prefix}/terms-and-conditions`,
   };
 
+  const paymentItems = [
+    { src: "/images/payments/visa.svg", label: "Visa" },
+    { src: "/images/payments/mastercard.svg", label: "Mastercard" },
+    { src: "/images/payments/maestro.svg", label: "Maestro" },
+    { src: "/images/payments/amex.svg", label: "American Express" },
+    { src: "/images/payments/stripe.svg", label: "Stripe" },
+    { src: "/images/payments/cash.svg", label: "Cash" },
+  ];
+
   return (
     <footer className="mt-20 border-t border-black/10 bg-black text-white">
       {/* Accepted Payment Methods */}
@@ -67,39 +76,26 @@ export default async function Footer() {
             <div className="pointer-events-none absolute inset-y-0 left-0 w-20 tvb-payments__fade-left" />
             <div className="pointer-events-none absolute inset-y-0 right-0 w-20 tvb-payments__fade-right" />
 
-            <div className="tvb-payments__track" aria-label="Accepted payment methods">
-              {[
-                { src: "/images/payments/visa.svg", label: "Visa" },
-                { src: "/images/payments/mastercard.svg", label: "Mastercard" },
-                { src: "/images/payments/maestro.svg", label: "Maestro" },
-                { src: "/images/payments/amex.svg", label: "American Express" },
-                { src: "/images/payments/stripe.svg", label: "Stripe" },
-                { src: "/images/payments/cash.svg", label: "Cash" },
-              ]
-                .concat([
-                  { src: "/images/payments/visa.svg", label: "Visa" },
-                  { src: "/images/payments/mastercard.svg", label: "Mastercard" },
-                  { src: "/images/payments/maestro.svg", label: "Maestro" },
-                  { src: "/images/payments/amex.svg", label: "American Express" },
-                  { src: "/images/payments/stripe.svg", label: "Stripe" },
-                  { src: "/images/payments/cash.svg", label: "Cash" },
-                ])
-                .map((item, i) => (
-                  <div
-                    key={`${item.label}-${i}`}
-                    className="tvb-payments__card group relative flex h-16 w-36 items-center justify-center rounded-2xl border border-black/10 bg-white shadow-sm"
-                    aria-label={item.label}
-                    title={item.label}
-                  >
-                    <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition group-hover:opacity-100" />
-                    <img
-                      src={item.src}
-                      alt={item.label}
-                      className="max-h-8 max-w-[80%] object-contain transition-transform duration-200 group-hover:scale-[1.03]"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
+            <div
+              className="tvb-payments__track flex flex-nowrap items-center gap-5"
+              aria-label="Accepted payment methods"
+            >
+              {[...paymentItems, ...paymentItems].map((item, i) => (
+                <div
+                  key={`${item.label}-${i}`}
+                  className="tvb-payments__card group relative flex h-16 w-36 flex-none items-center justify-center rounded-2xl border border-black/10 bg-white shadow-sm"
+                  aria-label={item.label}
+                  title={item.label}
+                >
+                  <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition group-hover:opacity-100" />
+                  <img
+                    src={item.src}
+                    alt={item.label}
+                    className="max-h-8 max-w-[80%] object-contain transition-transform duration-200 group-hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
             </div>
           </div>
 

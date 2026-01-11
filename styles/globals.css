@@ -1085,3 +1085,56 @@
 .floating-lang > summary::before {
   content: none !important;
 }
+/* -------------------------------------------------------------------------- */
+/* Accepted Payment Methods (Footer marquee)                                   */
+/* -------------------------------------------------------------------------- */
+
+.tvb-payments {
+  position: relative;
+}
+
+/* Track must be horizontal */
+.tvb-payments__track {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem; /* ~20px */
+  width: max-content;
+  will-change: transform;
+  animation: tvb-payments-marquee 26s linear infinite;
+}
+
+/* Each card should never shrink into a column */
+.tvb-payments__card {
+  flex: 0 0 auto;
+}
+
+/* Pause on hover (desktop) */
+.tvb-payments:hover .tvb-payments__track {
+  animation-play-state: paused;
+}
+
+/* Smooth edge fades */
+.tvb-payments__fade-left {
+  background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.tvb-payments__fade-right {
+  background: linear-gradient(to left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+@keyframes tvb-payments-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Reduce motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .tvb-payments__track {
+    animation: none;
+    transform: none;
+  }
+}
