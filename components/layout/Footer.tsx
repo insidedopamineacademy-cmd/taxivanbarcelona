@@ -87,11 +87,11 @@ export default async function Footer() {
                 .map((item, i) => (
                   <div
                     key={`${item.label}-${i}`}
-                    className="tvb-payments__card group flex h-16 w-36 items-center justify-center rounded-2xl border border-black/10 bg-white shadow-sm"
+                    className="tvb-payments__card group relative flex h-16 w-36 items-center justify-center rounded-2xl border border-black/10 bg-white shadow-sm"
                     aria-label={item.label}
                     title={item.label}
                   >
-                    <div className="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100" />
+                    <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition group-hover:opacity-100" />
                     <img
                       src={item.src}
                       alt={item.label}
