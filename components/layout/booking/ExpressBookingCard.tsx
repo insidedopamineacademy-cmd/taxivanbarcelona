@@ -211,6 +211,8 @@ export default function ExpressBookingCard({
 
   const [googleReady, setGoogleReady] = useState(false);
   const [googleFailed, setGoogleFailed] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
+  const acInitRef = useRef(false);
 
   const [pickup, setPickup] = useState("");
   const [dropoff, setDropoff] = useState("");
@@ -234,38 +236,40 @@ export default function ExpressBookingCard({
 
   const canUseGoogle = useMemo(() => !!apiKey && !googleFailed, [apiKey, googleFailed]);
 
-  useEffect(() => {
-    let mounted = true;
-
+  const ensureGoogleLoaded = async () => {
     if (!apiKey) {
       setGoogleReady(false);
       setGoogleFailed(false);
-      return;
+      return false;
+    }
+    if (googleFailed) return false;
+    if (window.google?.maps?.places) {
+      setGoogleReady(true);
+      return true;
     }
 
-    loadGooglePlaces(apiKey)
-      .then(() => {
-        if (!mounted) return;
-        if (window.google?.maps?.places) {
-          setGoogleReady(true);
-        } else {
-          setGoogleReady(false);
-          setGoogleFailed(true);
-        }
-      })
-      .catch(() => {
-        if (!mounted) return;
-        setGoogleReady(false);
-        setGoogleFailed(true);
-      });
-
-    return () => {
-      mounted = false;
-    };
-  }, [apiKey]);
+    try {
+      setGoogleLoading(true);
+      await loadGooglePlaces(apiKey);
+      if (window.google?.maps?.places) {
+        setGoogleReady(true);
+        return true;
+      }
+      setGoogleReady(false);
+      setGoogleFailed(true);
+      return false;
+    } catch {
+      setGoogleReady(false);
+      setGoogleFailed(true);
+      return false;
+    } finally {
+      setGoogleLoading(false);
+    }
+  };
 
   useEffect(() => {
     if (!googleReady) return;
+    if (acInitRef.current) return;
     if (!pickupRef.current || !dropoffRef.current) return;
 
     try {
@@ -288,6 +292,7 @@ export default function ExpressBookingCard({
 
       (pickupRef.current as any).__ac = pickupAC;
       (dropoffRef.current as any).__ac = dropoffAC;
+      acInitRef.current = true;
 
       pickupAC.addListener("place_changed", () => {
         const p = pickupAC.getPlace?.();
@@ -320,6 +325,7 @@ export default function ExpressBookingCard({
         setDropoffPlaceId(p?.place_id || "");
       });
     } catch {
+      acInitRef.current = false;
       setGoogleReady(false);
       setGoogleFailed(true);
     }
@@ -451,6 +457,9 @@ export default function ExpressBookingCard({
           const lat = pos.coords.latitude;
           const lng = pos.coords.longitude;
 
+          if (canUseGoogle && !window.google?.maps?.Geocoder) {
+            await ensureGoogleLoaded();
+          }
           if (canUseGoogle && window.google?.maps?.Geocoder) {
             const geocoder = new window.google.maps.Geocoder();
             geocoder.geocode(
@@ -526,6 +535,9 @@ export default function ExpressBookingCard({
                   setPickup(e.target.value);
                   setPickupPlaceId("");
                 }}
+                onFocus={() => {
+                  if (canUseGoogle && !googleReady && !googleLoading) ensureGoogleLoaded();
+                }}
               />
 
               <button
@@ -567,6 +579,9 @@ export default function ExpressBookingCard({
                 onChange={(e) => {
                   setDropoff(e.target.value);
                   setDropoffPlaceId("");
+                }}
+                onFocus={() => {
+                  if (canUseGoogle && !googleReady && !googleLoading) ensureGoogleLoaded();
                 }}
               />
             </div>
