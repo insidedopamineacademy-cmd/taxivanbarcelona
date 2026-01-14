@@ -315,7 +315,7 @@ export default async function HomePage() {
                         >
                           {t("home.fleet.requestAvailability", { default: "Request availability →" })}
                         </a>
-                        <span className="text-amber-800 text-sm font-semibold">{t("home.fleet.fastReply", { default: "Fast reply" })}</span>
+                        <span className="text-amber-900 text-sm font-semibold">{t("home.fleet.fastReply", { default: "Fast reply" })}</span>
                       </div>
                     </div>
                   </div>

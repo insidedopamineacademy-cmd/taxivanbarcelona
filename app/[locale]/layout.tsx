@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -10,6 +11,10 @@ import "@/styles/globals.css";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 export const fetchCache = "force-no-store";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://taxivanbarcelona.com"),
+};
 
 const SUPPORTED_LOCALES = ["en", "es", "it", "de"] as const;
 type AppLocale = (typeof SUPPORTED_LOCALES)[number];
