@@ -111,7 +111,7 @@ export default async function LongDistanceTransfersPage() {
       </section>
 
       {/* Benefits line (below hero, not inside hero) */}
-      <section className="container-page -mt-6 md:-mt-10 pb-10 md:pb-12">
+      <section className="container-page mt-6 md:-mt-10 pb-10 md:pb-12">
         <div className="flex flex-wrap items-center justify-center gap-3">
           <span className="inline-flex items-center rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-semibold text-gray-800 shadow-[0_12px_35px_rgba(0,0,0,0.10)]">
             {tr("hero.features.vans", "✓ Spacious 4–8 seater vans")}

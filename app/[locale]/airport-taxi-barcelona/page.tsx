@@ -10,7 +10,7 @@ const WHATSAPP_E164 = "34625099099";
 export const metadata: Metadata = {
   title: "Barcelona Airport Taxi Van – Group Transfers & 24/7 Service",
   description:
-    "Book a Barcelona airport taxi van for 3–8 people. 24/7 transfers, Fixed pricing, Free child seats. Reserve your van now!",
+    "Book a Barcelona airport taxi van for 3–8 people. 24/7 transfers, Fixed pricing, Child seats. Reserve your van now!",
 };
 
 export default async function AirportTaxiPage() {
@@ -101,7 +101,7 @@ export default async function AirportTaxiPage() {
       </section>
 
       {/* Benefits line (below hero, not inside hero) */}
-      <section className="container-page -mt-6 md:-mt-10 pb-10 md:pb-12">
+      <section className="container-page mt-6 md:-mt-10 pb-10 md:pb-12">
         <div className="flex flex-wrap items-center justify-center gap-3">
           <span className="inline-flex items-center rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-semibold text-gray-800 shadow-[0_12px_35px_rgba(0,0,0,0.10)]">
             {t("hero.features.fixed")}
