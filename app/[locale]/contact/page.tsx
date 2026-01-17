@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const PHONE_E164 = "+34625099099";
 const WHATSAPP_E164 = "34625099099";
-const EMAIL = "email@taxivanbarcelona.com";
+const EMAIL = "info@taxivanbarcelona.com";
 const ADDRESS = "Av Parallel 49, 08001 Barcelona";
 
 const GMAPS_QUERY = encodeURIComponent(ADDRESS);
@@ -122,18 +122,10 @@ export default async function ContactPage() {
 
             <div className="mt-7 flex flex-wrap gap-3">
               <a
-                className="btn btn-gold"
-                href={`https://wa.me/${WHATSAPP_E164}`}
-                target="_blank"
-                rel="noreferrer"
+                className="btn px-6 py-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 font-semibold"
+                href={`mailto:${EMAIL}`}
               >
-                {tr("hero.ctaWhatsApp", "WhatsApp Now")}
-              </a>
-              <a
-                className="btn px-6 py-3 rounded-full border border-white/25 text-white hover:bg-white/10 font-semibold"
-                href={`tel:${PHONE_E164}`}
-              >
-                {tr("hero.ctaCall", "Call Now")}
+                {tr("hero.ctaEmail", "Email Us")}
               </a>
             </div>
           </div>
