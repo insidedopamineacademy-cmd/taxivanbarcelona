@@ -10,6 +10,8 @@ const ADDRESS = "Av Parallel 49, 08001 Barcelona";
 const GMAPS_QUERY = encodeURIComponent(ADDRESS);
 const GOOGLE_MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${GMAPS_QUERY}`;
 const APPLE_MAPS_LINK = `https://maps.apple.com/?q=${GMAPS_QUERY}`;
+const MAILTO_LINK = `mailto:${EMAIL}`;
+const GMAIL_COMPOSE_LINK = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL)}`;
 
 export async function generateMetadata(): Promise<Metadata> {
   let locale = "en";
@@ -123,7 +125,9 @@ export default async function ContactPage() {
             <div className="mt-7 flex flex-wrap gap-3">
               <a
                 className="btn px-6 py-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 font-semibold"
-                href={`mailto:${EMAIL}`}
+                href={GMAIL_COMPOSE_LINK}
+                target="_blank"
+                rel="noreferrer"
               >
                 {tr("hero.ctaEmail", "Email Us")}
               </a>
@@ -229,7 +233,9 @@ export default async function ContactPage() {
 
           {/* Email */}
           <a
-            href={`mailto:${EMAIL}`}
+            href={GMAIL_COMPOSE_LINK}
+            target="_blank"
+            rel="noreferrer"
             className="card-float group rounded-3xl border border-black/10 bg-white p-6 shadow-sm transition"
           >
             <div className="flex items-start gap-4">
@@ -268,6 +274,11 @@ export default async function ContactPage() {
                 </p>
                 <p className="mt-5 font-semibold text-gold">{tr("cards.email.cta", "Send email →")}</p>
                 <p className="mt-2 text-sm text-gray-500 break-words">{EMAIL}</p>
+                <p className="mt-1 text-sm">
+                  <a className="underline text-gray-600 hover:text-black" href={MAILTO_LINK}>
+                    {tr("cards.email.fallback", "Open in your email app")}
+                  </a>
+                </p>
               </div>
             </div>
           </a>

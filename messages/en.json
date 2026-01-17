@@ -657,9 +657,10 @@
     "hero": {
       "kicker": "Fast replies • Clear pricing • 24/7",
       "title": "Contact Taxi Van Barcelona",
-      "subtitle": "Want to book quickly? Message us on WhatsApp, or call directly. We reply fast and confirm your ride details clearly—so you can relax and travel with confidence.",
+      "subtitle": "Want to book quickly? Email us, message us on WhatsApp, or call directly. We reply fast and confirm your ride details clearly—so you can relax and travel with confidence.",
       "ctaWhatsApp": "WhatsApp Now",
-      "ctaCall": "Call Now"
+      "ctaCall": "Call Now",
+      "ctaEmail": "Send Email"
     },
     "cards": {
       "whatsapp": {
