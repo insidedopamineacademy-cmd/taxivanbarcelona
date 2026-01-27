@@ -16,7 +16,7 @@ type BookingStrings = {
   subtitle?: string;
   pickupPlaceholder?: string;
   destinationPlaceholder?: string;
-  phonePlaceholder?: string;
+  phoneNumberPlaceholder?: string;
   phoneLabel?: string;
   waPhone?: string;
   useMyLocationAria?: string;
@@ -147,7 +147,8 @@ export default function ExpressBookingCard({
 
       pickupPlaceholder: strings?.pickupPlaceholder || tc("pickupPlaceholder", "Pickup location"),
       destinationPlaceholder: strings?.destinationPlaceholder || tc("destinationPlaceholder", "Destination"),
-      phonePlaceholder: strings?.phonePlaceholder || tc("phonePlaceholder", "Phone number"),
+      phoneNumberPlaceholder:
+        (strings as any)?.phoneNumberPlaceholder || tc("phoneNumberPlaceholder", "Phone number"),
       phoneLabel: strings?.phoneLabel || tc("phoneLabel", "Phone"),
       useMyLocationAria:
         strings?.useMyLocationAria || tc("useMyLocationAria", "Use my current location for pickup"),
@@ -222,7 +223,8 @@ export default function ExpressBookingCard({
 
   const [pickup, setPickup] = useState("");
   const [dropoff, setDropoff] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phoneDial, setPhoneDial] = useState("+34");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const [pickupPlaceId, setPickupPlaceId] = useState<string>("");
   const [dropoffPlaceId, setDropoffPlaceId] = useState<string>("");
@@ -357,7 +359,8 @@ export default function ExpressBookingCard({
     lines.push(`${s.waDropoff}: ${dropoff || "____"}`);
     lines.push("");
 
-    lines.push(`${s.waPhone}: ${phone || "____"}`);
+    const fullPhone = (phoneNumber || "").trim() ? `${phoneDial} ${phoneNumber.trim()}` : "____";
+    lines.push(`${s.waPhone}: ${fullPhone}`);
     lines.push("");
 
     lines.push(`${s.waDateTime}: ${formatWhen()}`);
@@ -540,17 +543,36 @@ export default function ExpressBookingCard({
             </div>
 
             {/* Phone */}
-            <div className="h-11 w-full rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
-              <input
-                type="tel"
-                inputMode="tel"
-                className="h-full w-full rounded-xl bg-transparent px-3.5 text-[14px] text-white placeholder:text-white/40 outline-none"
-                placeholder={s.phonePlaceholder}
-                aria-label={s.phoneLabel}
-                autoComplete="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
+            <div className="grid grid-cols-[110px_1fr] gap-2">
+              <div className="h-11 rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
+                <select
+                  value={phoneDial}
+                  onChange={(e) => setPhoneDial(e.target.value)}
+                  aria-label={s.phoneLabel}
+                  className="h-full w-full rounded-xl bg-transparent px-2.5 text-[13px] text-white outline-none"
+                >
+                  <option value="+34" className="bg-slate-900">ES +34</option>
+                  <option value="+376" className="bg-slate-900">AD +376</option>
+                  <option value="+33" className="bg-slate-900">FR +33</option>
+                  <option value="+39" className="bg-slate-900">IT +39</option>
+                  <option value="+49" className="bg-slate-900">DE +49</option>
+                  <option value="+44" className="bg-slate-900">UK +44</option>
+                  <option value="+1" className="bg-slate-900">US +1</option>
+                </select>
+              </div>
+
+              <div className="h-11 w-full rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
+                <input
+                  type="tel"
+                  inputMode="tel"
+                  className="h-full w-full rounded-xl bg-transparent px-3.5 text-[14px] text-white placeholder:text-white/40 outline-none"
+                  placeholder={s.phoneNumberPlaceholder}
+                  aria-label={s.phoneLabel}
+                  autoComplete="tel"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                />
+              </div>
             </div>
 
             {/* When + Pax + Bags (3-col compact row) */}
@@ -612,7 +634,12 @@ export default function ExpressBookingCard({
             {/* Schedule Date+Time (only when scheduled) */}
             {whenMode === "schedule" ? (
               <div className="grid grid-cols-2 gap-2">
-                <div className="h-11 rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
+                <div className="relative h-11 rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
+                  {!whenDate ? (
+                    <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[13px] text-white/40">
+                      {s.dateLabel}
+                    </span>
+                  ) : null}
                   <input
                     type="date"
                     value={whenDate}
@@ -622,7 +649,12 @@ export default function ExpressBookingCard({
                   />
                 </div>
 
-                <div className="h-11 rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
+                <div className="relative h-11 rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
+                  {!whenTime ? (
+                    <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[13px] text-white/40">
+                      {s.timeLabel}
+                    </span>
+                  ) : null}
                   <input
                     type="time"
                     value={whenTime}
