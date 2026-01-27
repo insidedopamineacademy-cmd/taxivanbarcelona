@@ -16,6 +16,9 @@ type BookingStrings = {
   subtitle?: string;
   pickupPlaceholder?: string;
   destinationPlaceholder?: string;
+  phonePlaceholder?: string;
+  phoneLabel?: string;
+  waPhone?: string;
   useMyLocationAria?: string;
   whenLabel?: string;
   whenNow?: string;
@@ -144,6 +147,8 @@ export default function ExpressBookingCard({
 
       pickupPlaceholder: strings?.pickupPlaceholder || tc("pickupPlaceholder", "Pickup location"),
       destinationPlaceholder: strings?.destinationPlaceholder || tc("destinationPlaceholder", "Destination"),
+      phonePlaceholder: strings?.phonePlaceholder || tc("phonePlaceholder", "Phone number"),
+      phoneLabel: strings?.phoneLabel || tc("phoneLabel", "Phone"),
       useMyLocationAria:
         strings?.useMyLocationAria || tc("useMyLocationAria", "Use my current location for pickup"),
       whenLabel: strings?.whenLabel || tc("whenLabel", "When?"),
@@ -200,6 +205,7 @@ export default function ExpressBookingCard({
       waPassengersLuggage: strings?.waPassengersLuggage || "",
       waEta: strings?.waEta || tw("eta", "ETA"),
       waDistance: strings?.waDistance || tw("distance", "Distance"),
+      waPhone: strings?.waPhone || tw("phone", "Phone"),
       waNotes: strings?.waNotes || tw("notes", "Notes"),
       waExtraDetails: strings?.waExtraDetails || tw("notes", "Notes"),
     }),
@@ -216,13 +222,10 @@ export default function ExpressBookingCard({
 
   const [pickup, setPickup] = useState("");
   const [dropoff, setDropoff] = useState("");
+  const [phone, setPhone] = useState("");
 
   const [pickupPlaceId, setPickupPlaceId] = useState<string>("");
   const [dropoffPlaceId, setDropoffPlaceId] = useState<string>("");
-
-  const [etaText, setEtaText] = useState<string>("");
-  const [distanceText, setDistanceText] = useState<string>("");
-  const [etaLoading, setEtaLoading] = useState(false);
 
   const [whenMode, setWhenMode] = useState<WhenMode>("now");
   const [whenDate, setWhenDate] = useState("");
@@ -331,49 +334,6 @@ export default function ExpressBookingCard({
     }
   }, [googleReady]);
 
-  useEffect(() => {
-    if (!googleReady) return;
-    if (!window.google?.maps?.DistanceMatrixService) return;
-
-    if (!pickupPlaceId || !dropoffPlaceId) {
-      setEtaText("");
-      setDistanceText("");
-      return;
-    }
-
-    setEtaLoading(true);
-
-    try {
-      const service = new window.google.maps.DistanceMatrixService();
-      service.getDistanceMatrix(
-        {
-          origins: [{ placeId: pickupPlaceId }],
-          destinations: [{ placeId: dropoffPlaceId }],
-          travelMode: window.google.maps.TravelMode.DRIVING,
-          unitSystem: window.google.maps.UnitSystem.METRIC,
-        },
-        (res: any, status: string) => {
-          setEtaLoading(false);
-          if (status !== "OK") {
-            setEtaText("");
-            setDistanceText("");
-            return;
-          }
-
-          const el = res?.rows?.[0]?.elements?.[0];
-          const dur = el?.duration?.text || "";
-          const dist = el?.distance?.text || "";
-
-          setEtaText(dur);
-          setDistanceText(dist);
-        }
-      );
-    } catch {
-      setEtaLoading(false);
-      setEtaText("");
-      setDistanceText("");
-    }
-  }, [googleReady, pickupPlaceId, dropoffPlaceId]);
 
   function formatWhen(): string {
     if (whenMode === "now") return s.whenNow;
@@ -397,6 +357,9 @@ export default function ExpressBookingCard({
     lines.push(`${s.waDropoff}: ${dropoff || "____"}`);
     lines.push("");
 
+    lines.push(`${s.waPhone}: ${phone || "____"}`);
+    lines.push("");
+
     lines.push(`${s.waDateTime}: ${formatWhen()}`);
     lines.push("");
 
@@ -404,16 +367,6 @@ export default function ExpressBookingCard({
     lines.push("");
 
     lines.push(`${s.waLuggage}: ${bags}`);
-
-    if (etaText) {
-      lines.push("");
-      lines.push(`${s.waEta}: ${etaText}`);
-    }
-
-    if (distanceText) {
-      lines.push("");
-      lines.push(`${s.waDistance}: ${distanceText}`);
-    }
 
     lines.push("");
     lines.push(`${s.waNotes}: ____`);
@@ -586,6 +539,20 @@ export default function ExpressBookingCard({
               />
             </div>
 
+            {/* Phone */}
+            <div className="h-11 w-full rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
+              <input
+                type="tel"
+                inputMode="tel"
+                className="h-full w-full rounded-xl bg-transparent px-3.5 text-[14px] text-white placeholder:text-white/40 outline-none"
+                placeholder={s.phonePlaceholder}
+                aria-label={s.phoneLabel}
+                autoComplete="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+            </div>
+
             {/* When + Pax + Bags (3-col compact row) */}
             <div className="grid grid-cols-3 gap-2">
               <div className="h-11 rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
@@ -667,22 +634,6 @@ export default function ExpressBookingCard({
               </div>
             ) : null}
 
-            {/* ETA - inline compact */}
-            {etaLoading ? (
-              <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-2 text-white/70 text-[12px]">
-                {s.etaCalculating}
-              </div>
-            ) : etaText ? (
-              <div className="rounded-xl border border-white/10 bg-white/6 px-3 py-2 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-bold text-white/50">{s.etaLabel}:</span>
-                  <span className="text-[13px] font-bold text-white">{etaText}</span>
-                </div>
-                {distanceText ? (
-                  <span className="text-[11px] text-white/45">{distanceText}</span>
-                ) : null}
-              </div>
-            ) : null}
 
             {/* Error */}
             {error ? (
