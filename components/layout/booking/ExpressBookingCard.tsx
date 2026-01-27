@@ -72,6 +72,8 @@ type Props = {
   strings?: BookingStrings;
 };
 
+type DialOption = { name: string; code: string; callingCode: string };
+
 function loadGooglePlaces(apiKey: string): Promise<void> {
   if (typeof window === "undefined") return Promise.resolve();
   if (window.google?.maps?.places) return Promise.resolve();
@@ -225,6 +227,32 @@ export default function ExpressBookingCard({
   const [dropoff, setDropoff] = useState("");
   const [phoneDial, setPhoneDial] = useState("+34");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [dialOptions, setDialOptions] = useState<DialOption[] | null>(null);
+  useEffect(() => {
+    let alive = true;
+
+    (async () => {
+      try {
+        const res = await fetch(
+          "https://cdn.jsdelivr.net/gh/xxxdepy/simple-country-dial-codes@master/country-calling-codes.min.json",
+          { cache: "force-cache" }
+        );
+        if (!res.ok) return;
+
+        const data = (await res.json()) as DialOption[];
+        if (!alive) return;
+
+        const sorted = [...data].sort((a, b) => a.name.localeCompare(b.name));
+        if (alive) setDialOptions(sorted);
+      } catch {
+        // silent fallback
+      }
+    })();
+
+    return () => {
+      alive = false;
+    };
+  }, []);
 
   const [pickupPlaceId, setPickupPlaceId] = useState<string>("");
   const [dropoffPlaceId, setDropoffPlaceId] = useState<string>("");
@@ -551,13 +579,31 @@ export default function ExpressBookingCard({
                   aria-label={s.phoneLabel}
                   className="h-full w-full rounded-xl bg-transparent px-2.5 text-[13px] text-white outline-none"
                 >
-                  <option value="+34" className="bg-slate-900">ES +34</option>
-                  <option value="+376" className="bg-slate-900">AD +376</option>
-                  <option value="+33" className="bg-slate-900">FR +33</option>
-                  <option value="+39" className="bg-slate-900">IT +39</option>
-                  <option value="+49" className="bg-slate-900">DE +49</option>
-                  <option value="+44" className="bg-slate-900">UK +44</option>
-                  <option value="+1" className="bg-slate-900">US +1</option>
+                  {!dialOptions ? (
+                    <>
+                      <option value="+34" className="bg-slate-900">ES +34</option>
+                      <option value="+376" className="bg-slate-900">AD +376</option>
+                      <option value="+33" className="bg-slate-900">FR +33</option>
+                      <option value="+39" className="bg-slate-900">IT +39</option>
+                      <option value="+49" className="bg-slate-900">DE +49</option>
+                      <option value="+44" className="bg-slate-900">GB +44</option>
+                      <option value="+1" className="bg-slate-900">US/CA +1</option>
+                    </>
+                  ) : (
+                    dialOptions.map((c) => {
+                      const dial = c.callingCode ? `+${c.callingCode}` : "";
+                      if (!dial || dial === "+") return null;
+                      return (
+                        <option
+                          key={`${c.code}-${c.callingCode}`}
+                          value={dial}
+                          className="bg-slate-900"
+                        >
+                          {`${c.name} (${c.code}) ${dial}`}
+                        </option>
+                      );
+                    })
+                  )}
                 </select>
               </div>
 
