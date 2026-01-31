@@ -10,8 +10,11 @@ const ADDRESS = "Av Parallel 49, 08001 Barcelona";
 const GMAPS_QUERY = encodeURIComponent(ADDRESS);
 const GOOGLE_MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${GMAPS_QUERY}`;
 const APPLE_MAPS_LINK = `https://maps.apple.com/?q=${GMAPS_QUERY}`;
-const MAILTO_LINK = `mailto:${EMAIL}`;
-const GMAIL_COMPOSE_LINK = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL)}`;
+const MAILTO_SUBJECT = encodeURIComponent("Taxi Van Barcelona — Booking request");
+const MAILTO_BODY = encodeURIComponent(
+  "Hi Taxi Van Barcelona,\n\nI’d like to request a booking.\n\nPickup: \nDrop-off: \nDate & time: \nPassengers: \nNotes: \n\nThank you!"
+);
+const MAILTO_LINK = `mailto:${EMAIL}?subject=${MAILTO_SUBJECT}&body=${MAILTO_BODY}`;
 
 export async function generateMetadata(): Promise<Metadata> {
   let locale = "en";
@@ -125,9 +128,7 @@ export default async function ContactPage() {
             <div className="mt-7 flex flex-wrap gap-3">
               <a
                 className="btn px-6 py-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 font-semibold"
-                href={GMAIL_COMPOSE_LINK}
-                target="_blank"
-                rel="noreferrer"
+                href={MAILTO_LINK}
               >
                 {tr("hero.ctaEmail", "Email Us")}
               </a>
@@ -232,56 +233,46 @@ export default async function ContactPage() {
           </a>
 
           {/* Email */}
-          <a
-            href={GMAIL_COMPOSE_LINK}
-            target="_blank"
-            rel="noreferrer"
-            className="card-float group rounded-3xl border border-black/10 bg-white p-6 shadow-sm transition"
-          >
-            <div className="flex items-start gap-4">
-              <div className="icon-badge" aria-hidden>
-                {/* Email icon */}
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4.5 7.5c0-1.1.9-2 2-2h11c1.1 0 2 .9 2 2v9c0 1.1-.9 2-2 2h-11c-1.1 0-2-.9-2-2v-9Z"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                  />
-                  <path
-                    d="M6 8.5 12 13l6-4.5"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+          <div className="card-float group rounded-3xl border border-black/10 bg-white p-6 shadow-sm transition">
+            <a href={MAILTO_LINK} className="block w-full h-full">
+              <div className="flex items-start gap-4">
+                <div className="icon-badge" aria-hidden>
+                  {/* Email icon */}
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.5 7.5c0-1.1.9-2 2-2h11c1.1 0 2 .9 2 2v9c0 1.1-.9 2-2 2h-11c-1.1 0-2-.9-2-2v-9Z"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                    />
+                    <path
+                      d="M6 8.5 12 13l6-4.5"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
 
-              <div className="flex-1">
-                <p className="text-sm font-semibold text-gray-500">{tr("cards.email.label", "Email")}</p>
-                <p className="mt-2 text-xl font-extrabold">{tr("cards.email.title", "Send a request")}</p>
-                <p className="mt-2 text-gray-600 leading-7">
-                  {tr(
-                    "cards.email.desc",
-                    "Best for corporate requests, invoices, or multi‑day planning."
-                  )}
-                </p>
-                <p className="mt-5 font-semibold text-gold">{tr("cards.email.cta", "Send email →")}</p>
-                <p className="mt-2 text-sm text-gray-500 break-words">{EMAIL}</p>
-                <p className="mt-1 text-sm">
-                  <a className="underline text-gray-600 hover:text-black" href={MAILTO_LINK}>
-                    {tr("cards.email.fallback", "Open in your email app")}
-                  </a>
-                </p>
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-gray-500">{tr("cards.email.label", "Email")}</p>
+                  <p className="mt-2 text-xl font-extrabold">{tr("cards.email.title", "Send a request")}</p>
+                  <p className="mt-2 text-gray-600 leading-7">
+                    {tr("cards.email.desc", "Best for corporate requests, invoices, or multi‑day planning.")}
+                  </p>
+                  <p className="mt-5 font-semibold text-gold">{tr("cards.email.cta", "Send email →")}</p>
+                  <p className="mt-2 text-sm text-gray-500 break-words">{EMAIL}</p>
+                  <p className="mt-1 text-sm text-gray-500">{tr("cards.email.helper", "Opens your default email app")}</p>
+                </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </section>
 

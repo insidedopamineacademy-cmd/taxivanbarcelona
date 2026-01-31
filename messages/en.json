@@ -680,7 +680,9 @@
         "label": "Email",
         "title": "Send a request",
         "desc": "Best for corporate requests, invoices, or multi‑day planning.",
-        "cta": "Send email →"
+        "cta": "Send email →",
+        "openGmail": "Or compose in Gmail",
+        "helper": "Opens your default email app"
       }
     },
     "find": {
@@ -821,6 +823,8 @@
       "subtitle": "Enter your route — opens WhatsApp with your details prefilled.",
       "pickupPlaceholder": "Pickup (hotel / address / terminal)",
       "destinationPlaceholder": "Destination (hotel / airport / venue)",
+      "phoneNumberPlaceholder": "Phone number",
+      "phoneLabel": "Phone",
       "useMyLocationAria": "Use my current location for pickup",
       "whenLabel": "When?",
       "whenNow": "Now",
@@ -851,6 +855,7 @@
       "header": "New booking request",
       "pickup": "Pickup",
       "dropoff": "Drop-off",
+      "phone": "Phone",
       "when": "When",
       "passengers": "Passengers",
       "luggage": "Luggage",
