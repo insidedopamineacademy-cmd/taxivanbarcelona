@@ -15,6 +15,11 @@ export const fetchCache = "force-no-store";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://taxivanbarcelona.com"),
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 const SUPPORTED_LOCALES = ["en", "es", "it", "de"] as const;
