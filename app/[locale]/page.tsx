@@ -1,41 +1,43 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import Script from "next/script";
 import { getLocale, getTranslations } from "next-intl/server";
 import ExpressBookingCard from "@/components/layout/booking/ExpressBookingCard";
+import { BRAND, metadataAlternates, normalizeLocale } from "@/config/brand";
+import { getQuickFacts } from "@/config/quickFacts";
 
-const PHONE_E164 = "+34625099099";
-const WHATSAPP_E164 = "34625099099";
+const PHONE_E164 = BRAND.phoneRaw;
+const WHATSAPP_E164 = BRAND.phoneRaw.replace("+", "");
 
-export const metadata: Metadata = {
-  title: "Taxi Van Barcelona | Airport, Cruise & Long-Distance Transfers",
-  description:
-    "Book a spacious taxi van in Barcelona for airport transfers, cruise port pickup, and long-distance trips across Catalonia. Clean 4–8 seater vans, fixed pricing, 24/7 support.",
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = normalizeLocale(await getLocale());
+  return {
     title: "Taxi Van Barcelona | Airport, Cruise & Long-Distance Transfers",
     description:
-      "Spacious 4–8 seater taxi vans in Barcelona for airport, cruise, and long-distance transfers. Fixed pricing, professional drivers, fast WhatsApp booking.",
-    url: "/",
-    type: "website",
-  },
-};
+      "Book a spacious taxi van in Barcelona for airport transfers, cruise port pickup, and long-distance trips across Catalonia. Clean 4–8 seater vans, fixed pricing, 24/7 support.",
+    alternates: metadataAlternates(locale, "/"),
+    openGraph: {
+      title: "Taxi Van Barcelona | Airport, Cruise & Long-Distance Transfers",
+      description:
+        "Spacious 4–8 seater taxi vans in Barcelona for airport, cruise, and long-distance transfers. Fixed pricing, professional drivers, fast WhatsApp booking.",
+      url: metadataAlternates(locale, "/").canonical,
+      type: "website",
+    },
+  };
+}
 
 export default async function HomePage() {
-  const locale = await getLocale();
+  const locale = normalizeLocale(await getLocale());
   const t = await getTranslations();
+  const quickFacts = getQuickFacts("home", locale);
 
-  // localePrefix = "as-needed" behavior: default locale (en) has NO prefix
   const prefix = locale === "en" ? "" : `/${locale}`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebSite",
-        name: "Taxi Van Barcelona",
+        name: BRAND.name,
         url: "https://taxivanbarcelona.com/",
         potentialAction: {
           "@type": "SearchAction",
@@ -45,23 +47,71 @@ export default async function HomePage() {
       },
       {
         "@type": "LocalBusiness",
-        name: "Taxi Van Barcelona",
+        "@id": "https://taxivanbarcelona.com/#localbusiness",
+        name: BRAND.name,
         url: "https://taxivanbarcelona.com/",
         telephone: PHONE_E164,
-        email: "email@taxivanbarcelona.com",
-        areaServed: "Barcelona",
-        priceRange: "€€",
-        sameAs: [`https://wa.me/${WHATSAPP_E164}`],
+        email: BRAND.email,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: BRAND.address.street,
+          postalCode: BRAND.address.postalCode,
+          addressLocality: BRAND.address.city,
+          addressCountry: BRAND.address.country,
+        },
+        areaServed: BRAND.serviceArea,
+        sameAs: [BRAND.whatsappUrl],
+      },
+      {
+        "@type": "TaxiService",
+        "@id": "https://taxivanbarcelona.com/#taxiservice",
+        name: BRAND.name,
+        provider: { "@id": "https://taxivanbarcelona.com/#localbusiness" },
+        areaServed: BRAND.serviceArea,
+        serviceType: "Private airport, cruise port and long-distance transfers",
+        availableChannel: [
+          {
+            "@type": "ServiceChannel",
+            name: "Online booking",
+            serviceUrl: "https://taxivanbarcelona.com/contact",
+          },
+          {
+            "@type": "ServiceChannel",
+            name: "WhatsApp",
+            serviceUrl: BRAND.whatsappUrl,
+          },
+          {
+            "@type": "ServiceChannel",
+            name: "Telephone",
+            telephone: PHONE_E164,
+          },
+        ],
+        serviceArea: [
+          {
+            "@type": "AdministrativeArea",
+            name: "Barcelona, Catalonia, Spain",
+          },
+          {
+            "@type": "GeoCircle",
+            geoMidpoint: {
+              "@type": "GeoCoordinates",
+              latitude: 41.3874,
+              longitude: 2.1686,
+            },
+            geoRadius: "60000",
+          },
+        ],
       },
     ],
   };
 
   return (
     <>
-      <Script id="home-jsonld" type="application/ld+json" strategy="afterInteractive">
-        {JSON.stringify(jsonLd)}
-      </Script>
-
+      <script
+        id="home-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* HERO (premium black + gold vignette) */}
       <section
@@ -137,6 +187,15 @@ export default async function HomePage() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="container-page py-10 md:py-12">
+        <h2 className="text-2xl md:text-3xl font-extrabold">Quick Facts</h2>
+        <ul className="mt-4 list-disc pl-6 space-y-2 text-gray-700 leading-7">
+          {quickFacts.items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </section>
 
       {/* Intro + Services + rest of main site in off-white wrapper */}
@@ -273,7 +332,7 @@ export default async function HomePage() {
                 const altText = t("home.fleet.imageAlt", {
                   title: v.title,
                   default: "{title} in Barcelona",
-                } as any);
+                });
                 return (
                   <div
                     key={v.title}
@@ -289,7 +348,6 @@ export default async function HomePage() {
                         className="h-56 w-full object-cover"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         quality={85}
-                        unoptimized
                       />
                     </div>
 
@@ -311,7 +369,7 @@ export default async function HomePage() {
                           aria-label={t("home.fleet.requestAvailabilityAria", {
                             title: v.title,
                             default: "Request {title} availability on WhatsApp",
-                          } as any)}
+                          })}
                         >
                           {t("home.fleet.requestAvailability", { default: "Request availability →" })}
                         </a>
@@ -362,7 +420,7 @@ export default async function HomePage() {
               },
               {
                 title: t("home.whyChoose.items.pricing.title", { default: "Transparent Pricing" }),
-                desc: t("home.whyChoose.items.pricing.desc", { default: "No surprises—clear quotes and fair rates for popular routes. Prices starting from 35€" }),
+                desc: t("home.whyChoose.items.pricing.desc", { default: "No surprises—clear quotes and fair rates for popular routes. Fixed pricing confirmed before travel." }),
               },
               {
                 title: t("home.whyChoose.items.meetGreet.title", { default: "Meet & Greet" }),

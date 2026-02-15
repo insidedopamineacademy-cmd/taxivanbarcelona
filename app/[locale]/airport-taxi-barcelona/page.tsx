@@ -1,23 +1,91 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import ExpressBookingCard from "@/components/layout/booking/ExpressBookingCard";
+import {
+  BRAND,
+  localizedAbsoluteUrl,
+  metadataAlternates,
+  normalizeLocale,
+} from "@/config/brand";
+import { getQuickFacts } from "@/config/quickFacts";
 
-const PHONE_E164 = "+34625099099";
-const WHATSAPP_E164 = "34625099099";
+const PHONE_E164 = BRAND.phoneRaw;
+const WHATSAPP_E164 = BRAND.phoneRaw.replace("+", "");
 
-export const metadata: Metadata = {
-  title: "Barcelona Airport Taxi Van – Group Transfers & 24/7 Service",
-  description:
-    "Book a Barcelona airport taxi van for 3–8 people. 24/7 transfers, Fixed pricing, Child seats. Reserve your van now!",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = normalizeLocale(await getLocale());
+  const alternates = metadataAlternates(locale, "/airport-taxi-barcelona");
+  const title = "Barcelona Airport Taxi Van – Group Transfers & 24/7 Service";
+  const description =
+    "Book a Barcelona airport taxi van for 4–8 passengers. 24/7 transfers, fixed pricing confirmed before travel, and child seats available upon request.";
+
+  return {
+    title,
+    description,
+    alternates,
+    openGraph: {
+      title,
+      description,
+      url: alternates.canonical,
+      type: "website",
+    },
+  };
+}
 
 export default async function AirportTaxiPage() {
   const t = await getTranslations("airport");
-  const locale = await getLocale();
+  const locale = normalizeLocale(await getLocale());
+  const quickFacts = getQuickFacts("airport", locale);
+  const pagePath = "/airport-taxi-barcelona";
   // localePrefix = "as-needed" behavior: default locale (en) has NO prefix
   const prefix = locale === "en" ? "" : `/${locale}`;
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `${BRAND.name} Airport Transfers`,
+    serviceType: "Private airport transfers",
+    provider: { "@id": "https://taxivanbarcelona.com/#localbusiness" },
+    areaServed: "Barcelona",
+    availableChannel: [
+      {
+        "@type": "ServiceChannel",
+        name: "Online booking",
+        serviceUrl: "https://taxivanbarcelona.com/contact",
+      },
+      {
+        "@type": "ServiceChannel",
+        name: "Telephone",
+        telephone: PHONE_E164,
+      },
+      {
+        "@type": "ServiceChannel",
+        name: "WhatsApp",
+        serviceUrl: BRAND.whatsappUrl,
+      },
+    ],
+  };
+  const breadcrumbJsonLd = {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: localizedAbsoluteUrl(locale, "/"),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Airport Taxi Barcelona",
+        item: localizedAbsoluteUrl(locale, pagePath),
+      },
+    ],
+  };
+  const schemaJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [serviceJsonLd, breadcrumbJsonLd],
+  };
 
   // next-intl strict mode: avoid throwing on missing keys
   const hasKey = (key: string) => {
@@ -31,6 +99,11 @@ export default async function AirportTaxiPage() {
 
   return (
     <>
+      <script
+        id="airport-service-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJsonLd) }}
+      />
       {/* HERO (clean + aligned) */}
       <section
         className="relative overflow-hidden bg-black min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] md:min-h-0"
@@ -98,6 +171,15 @@ export default async function AirportTaxiPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="container-page py-10 md:py-12">
+        <h2 className="text-2xl md:text-3xl font-extrabold">Quick Facts</h2>
+        <ul className="mt-4 list-disc pl-6 space-y-2 text-gray-700 leading-7">
+          {quickFacts.items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </section>
 
       {/* Benefits line (below hero, not inside hero) */}
@@ -251,7 +333,7 @@ export default async function AirportTaxiPage() {
                   q: tt("seo.faq.q2", "How many passengers can the airport taxi van take?"),
                   a: tt(
                     "seo.faq.a2",
-                    "Most trips are for 3–8 passengers depending on the van and luggage requirements."
+                    `Most trips are for ${BRAND.fleetCapacity} depending on luggage requirements.`
                   ),
                 },
                 {
@@ -287,17 +369,25 @@ export default async function AirportTaxiPage() {
 
       {/* SEO-friendly internal links */}
       <section className="container-page pb-20 text-center">
-        <p className="text-gray-700">
-          {t("links.intro")}
+        <p className="text-gray-700 leading-7">
+          {t("links.intro")}{" "}
+          <Link
+            href={`${prefix}/cruise-port-transfer-barcelona`}
+            className="underline underline-offset-4 hover:opacity-80"
+          >
+            Barcelona cruise port pickup service
+          </Link>{" "}
+          and{" "}
+          <Link
+            href={`${prefix}/long-distance-transfers`}
+            className="underline underline-offset-4 hover:opacity-80"
+          >
+            long-distance taxi transfers from Barcelona
+          </Link>
+          .
         </p>
 
         <div className="mt-5 flex flex-wrap justify-center gap-3">
-          <Link
-            href={`${prefix}/cruise-port-transfer-barcelona`}
-            className="btn px-6 py-3 rounded-full border border-black/15 hover:bg-black/5 font-semibold"
-          >
-            {t("links.cruise")}
-          </Link>
           <Link
             href={`${prefix}/faqs`}
             className="btn px-6 py-3 rounded-full border border-black/15 hover:bg-black/5 font-semibold"

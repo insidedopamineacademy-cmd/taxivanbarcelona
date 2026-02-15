@@ -1,21 +1,42 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
 import ExpressBookingCard from "@/components/layout/booking/ExpressBookingCard";
+import {
+  BRAND,
+  localizedAbsoluteUrl,
+  metadataAlternates,
+  normalizeLocale,
+} from "@/config/brand";
+import { getQuickFacts } from "@/config/quickFacts";
 
-const PHONE_E164 = "+34625099099";
-const WHATSAPP_E164 = "34625099099";
+const PHONE_E164 = BRAND.phoneRaw;
+const WHATSAPP_E164 = BRAND.phoneRaw.replace("+", "");
 
-export const metadata: Metadata = {
-  title: "Long Distance Taxi Barcelona | Comfortable Van Transfers Across Spain",
-  description:
-    "Book long-distance taxi transfers from Barcelona with spacious 4–8 seater vans, professional drivers, and fixed pricing on request. Door-to-door travel across Catalonia and Spain.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = normalizeLocale(await getLocale());
+  const alternates = metadataAlternates(locale, "/long-distance-transfers");
+  const title = "Long Distance Taxi Barcelona | Comfortable Van Transfers Across Spain";
+  const description =
+    "Book long-distance taxi transfers from Barcelona with spacious 4–8 passenger vans, professional drivers, and fixed pricing confirmed before travel. Door-to-door travel across Catalonia and Spain.";
+  return {
+    title,
+    description,
+    alternates,
+    openGraph: {
+      title,
+      description,
+      url: alternates.canonical,
+      type: "website",
+    },
+  };
+}
 
 export default async function LongDistanceTransfersPage() {
-  const locale = await getLocale();
+  const locale = normalizeLocale(await getLocale());
   const t = await getTranslations("long");
+  const quickFacts = getQuickFacts("long", locale);
+  const pagePath = "/long-distance-transfers";
 
   // Safe fallback helper (avoids MISSING_MESSAGE crashes while translations are being added)
   const tr = (key: string, fallback: string) => (t.has(key) ? t(key) : fallback);
@@ -32,9 +53,60 @@ export default async function LongDistanceTransfersPage() {
     "absolute inset-0 rounded-3xl border border-[rgba(223,178,77,0.55)]";
   const goldCardFxTop =
     "absolute left-6 right-6 top-3 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[rgba(223,178,77,0.9)] to-transparent";
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `${BRAND.name} Long-Distance Transfers`,
+    serviceType: "Private long-distance transfers",
+    provider: { "@id": "https://taxivanbarcelona.com/#localbusiness" },
+    areaServed: "Barcelona",
+    availableChannel: [
+      {
+        "@type": "ServiceChannel",
+        name: "Online booking",
+        serviceUrl: "https://taxivanbarcelona.com/contact",
+      },
+      {
+        "@type": "ServiceChannel",
+        name: "Telephone",
+        telephone: PHONE_E164,
+      },
+      {
+        "@type": "ServiceChannel",
+        name: "WhatsApp",
+        serviceUrl: BRAND.whatsappUrl,
+      },
+    ],
+  };
+  const breadcrumbJsonLd = {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: localizedAbsoluteUrl(locale, "/"),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Long Distance Transfers",
+        item: localizedAbsoluteUrl(locale, pagePath),
+      },
+    ],
+  };
+  const schemaJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [serviceJsonLd, breadcrumbJsonLd],
+  };
 
   return (
     <>
+      <script
+        id="long-distance-service-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJsonLd) }}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-black min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] md:min-h-0">
         {/* soft black → gold vignette overlay */}
@@ -110,11 +182,20 @@ export default async function LongDistanceTransfersPage() {
         </div>
       </section>
 
+      <section className="container-page py-10 md:py-12">
+        <h2 className="text-2xl md:text-3xl font-extrabold">Quick Facts</h2>
+        <ul className="mt-4 list-disc pl-6 space-y-2 text-gray-700 leading-7">
+          {quickFacts.items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
       {/* Benefits line (below hero, not inside hero) */}
       <section className="container-page mt-6 md:-mt-10 pb-10 md:pb-12">
         <div className="flex flex-wrap items-center justify-center gap-3">
           <span className="inline-flex items-center rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-semibold text-gray-800 shadow-[0_12px_35px_rgba(0,0,0,0.10)]">
-            {tr("hero.features.vans", "✓ Spacious 4–8 seater vans")}
+            {tr("hero.features.vans", "✓ Spacious 4–8 passenger vans")}
           </span>
           <span className="inline-flex items-center rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-semibold text-gray-800 shadow-[0_12px_35px_rgba(0,0,0,0.10)]">
             {tr("hero.features.drivers", "✓ Professional drivers")}
@@ -260,7 +341,7 @@ export default async function LongDistanceTransfersPage() {
             <ul className="mt-6 space-y-3 text-gray-700">
               <li>{tr("hourly.b1", "• Multiple stops with one driver")}</li>
               <li>{tr("hourly.b2", "• Ideal for business, events, and families")}</li>
-              <li>{tr("hourly.b3", "• Spacious 4–8 seater vans")}</li>
+              <li>{tr("hourly.b3", "• Spacious 4–8 passenger vans")}</li>
               <li>{tr("hourly.b4", "• Clear pricing confirmed in advance")}</li>
             </ul>
 
@@ -320,7 +401,7 @@ export default async function LongDistanceTransfersPage() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {([
             { key: "includes.i1", fallback: "Private ride (no sharing)", emoji: "🚖" },
-            { key: "includes.i2", fallback: "4–8 seater vans", emoji: "🚐" },
+            { key: "includes.i2", fallback: "4–8 passenger vans", emoji: "🚐" },
             { key: "includes.i3", fallback: "Luggage space included", emoji: "🧳" },
             { key: "includes.i4", fallback: "Professional drivers", emoji: "🧑‍✈️" },
             { key: "includes.i5", fallback: "Fixed price on request", emoji: "💶" },
@@ -439,23 +520,23 @@ export default async function LongDistanceTransfersPage() {
 
       {/* INTERNAL LINKS */}
       <section className="container-page pb-20 text-center">
-        <p className="text-gray-700">
-          {tr("links.intro", "Need airport or cruise pickup too? Explore:")}
+        <p className="text-gray-700 leading-7">
+          {tr("links.intro", "Need airport or cruise pickup too? Explore:")}{" "}
+          <Link
+            href={`${prefix}/airport-taxi-barcelona`}
+            className="underline underline-offset-4 hover:opacity-80"
+          >
+            Barcelona airport taxi van transfers
+          </Link>
+          .
         </p>
 
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Link
-            href={`${prefix}/airport-taxi-barcelona`}
+            href={`${prefix}/faqs`}
             className="btn px-6 py-3 rounded-full border border-black/15 hover:bg-black/5 font-semibold"
           >
-            {tr("links.airport", "Airport Taxi")}
-          </Link>
-
-          <Link
-            href={`${prefix}/cruise-port-transfer-barcelona`}
-            className="btn px-6 py-3 rounded-full border border-black/15 hover:bg-black/5 font-semibold"
-          >
-            {tr("links.cruise", "Cruise Port Pickup")}
+            FAQs
           </Link>
 
           <Link

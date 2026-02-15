@@ -236,7 +236,7 @@
         },
         "pricing": {
           "title": "Transparente Preise",
-          "desc": "Keine Überraschungen – ab 35€."
+          "desc": "Keine Überraschungen – mit vorab bestätigtem Festpreis."
         },
         "meetGreet": {
           "title": "Meet & Greet",
@@ -336,11 +336,11 @@
           "desc": "Platz für Koffer und Kreuzfahrtgepäck."
         },
         "pricing": {
-          "title": "Festpreis ab 34€",
+          "title": "Festpreis wird vor der Fahrt bestätigt",
           "desc": "Vor Abholung bestätigt — keine Überraschungen."
         },
         "child": {
-          "title": "Kostenlose Kindersitze",
+          "title": "Kindersitze auf Anfrage",
           "desc": "Auf Anfrage verfügbar."
         },
         "door": {
@@ -350,8 +350,8 @@
       },
       "i1": "🚐 4–8‑Sitzer‑Vans",
       "i2": "🧳 Große Gepäckkapazität",
-      "i3": "💰 Festpreis ab 34€",
-      "i4": "👶 Kostenlose Kindersitze",
+      "i3": "💰 Festpreis wird vor der Fahrt bestätigt",
+      "i4": "👶 Kindersitze auf Anfrage",
       "i5": "📍 Tür‑zu‑Tür‑Service"
     },
     "whyChoose": {
@@ -559,14 +559,14 @@
     "hero": {
       "eyebrow": "Barcelona El Prat (T1 & T2) • 24/7",
       "title": "Flughafen Barcelona Taxi‑Van — Zuverlässige Transfers für Gruppen",
-      "desc": "Vermeiden Sie lange Warteschlangen am Flughafen El Prat. Buchen Sie vorab einen geräumigen 4–8‑Sitzer‑Van mit Festpreis, professionellen Fahrern und kostenlosen Kindersitzen — ankommen und direkt losfahren.",
+      "desc": "Vermeiden Sie lange Warteschlangen am Flughafen El Prat. Buchen Sie vorab einen geräumigen 4–8‑Sitzer‑Van mit Festpreis, professionellen Fahrern und Kindersitzen auf Anfrage — ankommen und direkt losfahren.",
       "call": "Jetzt anrufen",
       "whatsapp": "WhatsApp",
       "features": {
         "fixed": "✓ Festpreis",
         "meet": "✓ Meet & Greet",
         "luggage": "✓ Platz für Gruppengepäck",
-        "child": "✓ Kostenlose Kindersitze"
+        "child": "✓ Kindersitze auf Anfrage"
       }
     },
     "includes": {
@@ -582,10 +582,10 @@
         },
         "pricing": {
           "title": "Feste Preise",
-          "desc": "Ab 34 € (streckenabhängig)."
+          "desc": "Festpreis wird vor der Fahrt bestätigt."
         },
         "child": {
-          "title": "Kostenlose Kindersitze",
+          "title": "Kindersitze auf Anfrage",
           "desc": "Auf Anfrage – ohne Aufpreis."
         },
         "door": {
@@ -630,7 +630,7 @@
         "q1": "Bieten Sie Festpreise für Flughafentransfers an?",
         "a1": "Ja. Für gängige Strecken bestätigen wir vor der Abholung einen klaren Festpreis, basierend auf Passagieren und Gepäck.",
         "q2": "Wie viele Passagiere passen in den Taxi‑Van zum Flughafen?",
-        "a2": "Die meisten Transfers sind für 3–8 Personen geeignet, abhängig vom Fahrzeugtyp und Gepäck.",
+        "a2": "Die meisten Transfers sind für 4–8 Personen geeignet, abhängig vom Gepäck.",
         "q3": "Wo trifft uns der Fahrer am Flughafen BCN?",
         "a3": "Wir bestätigen im Voraus das Terminal (T1/T2) und den Treffpunkt. Falls Meet & Greet enthalten ist, senden wir klare Anweisungen per WhatsApp.",
         "q4": "Können Sie uns vom Flughafen zum Kreuzfahrthafen bringen?",
@@ -745,7 +745,7 @@
         "Festpreis oder Taxameter (je nach Strecke)",
         "Meet & Greet verfügbar",
         "Gruppen & Gepäck: mehr Platz",
-        "Kostenlose Kindersitze auf Anfrage"
+        "Kindersitze auf Anfrage"
       ],
       "card": {
         "title": "Für internationale Reisende gemacht",
@@ -804,7 +804,7 @@
   "contact": {
     "meta": {
       "title": "Kontakt Taxi Van Barcelona | WhatsApp, Anruf & Adresse",
-      "description": "Kontaktieren Sie Taxi Van Barcelona per WhatsApp oder Telefon – 24/7. Adresse: Av Parallel 49, 08001 Barcelona. Schnelle Antworten für Flughafen-, Kreuzfahrt- und Langstrecken‑Transfers.",
+      "description": "Kontaktieren Sie Taxi Van Barcelona per WhatsApp oder Telefon – 24/7. Adresse: Av. Parallel 49, 08001 Barcelona. Schnelle Antworten für Flughafen-, Kreuzfahrt- und Langstrecken‑Transfers.",
       "ogTitle": "Kontakt Taxi Van Barcelona",
       "ogDescription": "Schreiben Sie uns per WhatsApp oder rufen Sie 24/7 an – für Flughafen-, Kreuzfahrt- und Langstrecken‑Transfers in Barcelona."
     },

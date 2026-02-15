@@ -1,9 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
+import { SUPPORTED_LOCALES, type AppLocale } from "@/config/brand";
+
+type SupportedLocale = AppLocale;
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,9 +15,6 @@ export default function Header() {
   const [isMobile, setIsMobile] = useState(false);
 
   const pathname = usePathname() || "/";
-
-  const SUPPORTED_LOCALES = ["en", "es", "de", "it"] as const;
-  type SupportedLocale = (typeof SUPPORTED_LOCALES)[number];
 
   const t = useTranslations();
 
@@ -166,7 +167,7 @@ export default function Header() {
           aria-label={t("header.ariaHome")}
           onClick={() => setMenuOpen(false)}
         >
-          <img
+          <Image
             src="/images/Taxi-barcelona.svg"
             alt={t("header.ariaHome")}
             width={190}

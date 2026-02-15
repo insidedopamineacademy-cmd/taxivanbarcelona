@@ -1,21 +1,42 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import ExpressBookingCard from "@/components/layout/booking/ExpressBookingCard";
+import {
+  BRAND,
+  localizedAbsoluteUrl,
+  metadataAlternates,
+  normalizeLocale,
+} from "@/config/brand";
+import { getQuickFacts } from "@/config/quickFacts";
 
-const PHONE_E164 = "+34625099099";
-const WHATSAPP_E164 = "34625099099";
+const PHONE_E164 = BRAND.phoneRaw;
+const WHATSAPP_E164 = BRAND.phoneRaw.replace("+", "");
 
-export const metadata: Metadata = {
-  title: "Cruise Transfer Barcelona | Port Pickup, Airport Transfers & City Tours",
-  description:
-    "Book your cruise transfer in Barcelona with Taxi Van Barcelona. Reliable pickup from Moll Adossat/Port Vell to hotel or airport, plus Barcelona city tours for cruise passengers. Fixed pricing, luggage space, 24/7 service.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = normalizeLocale(await getLocale());
+  const alternates = metadataAlternates(locale, "/cruise-port-transfer-barcelona");
+  const title = "Cruise Transfer Barcelona | Port Pickup, Airport Transfers & City Tours";
+  const description =
+    "Book your cruise transfer in Barcelona with Taxi Van Barcelona. Reliable pickup from Moll Adossat/Port Vell to hotel or airport, plus city tours for cruise passengers. Fixed pricing confirmed before travel, luggage space, and 24/7 service.";
+  return {
+    title,
+    description,
+    alternates,
+    openGraph: {
+      title,
+      description,
+      url: alternates.canonical,
+      type: "website",
+    },
+  };
+}
 
 export default async function CruisePortPickupPage() {
-  const locale = await getLocale();
+  const locale = normalizeLocale(await getLocale());
   const t = await getTranslations("cruise");
+  const quickFacts = getQuickFacts("cruise", locale);
+  const pagePath = "/cruise-port-transfer-barcelona";
 
   // localePrefix = "as-needed" behavior: default locale (en) has NO prefix
   const prefix = locale === "en" ? "" : `/${locale}`;
@@ -37,9 +58,60 @@ export default async function CruisePortPickupPage() {
 
   const goldCardFxTop =
     "absolute left-6 right-6 top-3 h-[2px] rounded-full bg-gradient-to-r from-transparent via-[rgba(223,178,77,0.9)] to-transparent";
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `${BRAND.name} Cruise Port Transfers`,
+    serviceType: "Private cruise port transfers",
+    provider: { "@id": "https://taxivanbarcelona.com/#localbusiness" },
+    areaServed: "Barcelona",
+    availableChannel: [
+      {
+        "@type": "ServiceChannel",
+        name: "Online booking",
+        serviceUrl: "https://taxivanbarcelona.com/contact",
+      },
+      {
+        "@type": "ServiceChannel",
+        name: "Telephone",
+        telephone: PHONE_E164,
+      },
+      {
+        "@type": "ServiceChannel",
+        name: "WhatsApp",
+        serviceUrl: BRAND.whatsappUrl,
+      },
+    ],
+  };
+  const breadcrumbJsonLd = {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: localizedAbsoluteUrl(locale, "/"),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Cruise Port Transfer Barcelona",
+        item: localizedAbsoluteUrl(locale, pagePath),
+      },
+    ],
+  };
+  const schemaJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [serviceJsonLd, breadcrumbJsonLd],
+  };
 
   return (
     <>
+      <script
+        id="cruise-service-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJsonLd) }}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-black min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] md:min-h-0">
         {/* gold accents */}
@@ -112,6 +184,15 @@ export default async function CruisePortPickupPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="container-page py-10 md:py-12">
+        <h2 className="text-2xl md:text-3xl font-extrabold">Quick Facts</h2>
+        <ul className="mt-4 list-disc pl-6 space-y-2 text-gray-700 leading-7">
+          {quickFacts.items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </section>
 
       {/* Benefits line (below hero, not inside hero) */}
@@ -249,10 +330,10 @@ export default async function CruisePortPickupPage() {
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {[
-            tr("includes.i1", "🚐 4–8 seater vans"),
+            tr("includes.i1", "🚐 4–8 passenger vans"),
             tr("includes.i2", "🧳 Large luggage capacity"),
-            tr("includes.i3", "💰 Fixed pricing from 34€"),
-            tr("includes.i4", "👶 Child seats from €5"),
+            tr("includes.i3", "💰 Fixed pricing confirmed before travel"),
+            tr("includes.i4", "👶 Child seats available upon request"),
             tr("includes.i5", "📍 Door-to-door service"),
           ].map((item) => (
             <div key={item} className={goldCard}>
@@ -319,7 +400,7 @@ export default async function CruisePortPickupPage() {
 
       {/* TRUST + LINKS */}
       <section className="container-page pb-20 text-center">
-        <p className="text-gray-700">
+        <p className="text-gray-700 leading-7">
           {tr("links.portInfoPrefix", "Need official port information? Visit")}{" "}
           <a
             href="https://www.portdebarcelona.cat"
@@ -331,14 +412,18 @@ export default async function CruisePortPickupPage() {
           </a>
           .
         </p>
-
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
+        <p className="mt-4 text-gray-700 leading-7">
+          For connected trips, see our{" "}
           <Link
             href={`${prefix}/airport-taxi-barcelona`}
-            className="btn px-6 py-3 rounded-full border border-black/15 hover:bg-black/5 font-semibold"
+            className="underline underline-offset-4 hover:opacity-80"
           >
-            {tr("links.airport", "Airport Taxi")}
+            Barcelona airport taxi van transfers
           </Link>
+          .
+        </p>
+
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Link
             href={`${prefix}/faqs`}
             className="btn px-6 py-3 rounded-full border border-black/15 hover:bg-black/5 font-semibold"

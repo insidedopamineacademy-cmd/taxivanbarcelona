@@ -2,48 +2,83 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
+import { getLocale } from "next-intl/server";
+import {
+  BRAND,
+  localizedAbsoluteUrl,
+  metadataAlternates,
+  normalizeLocale,
+} from "@/config/brand";
 
-const BUSINESS_NAME = "Taxi Van Barcelona";
+const BUSINESS_NAME = BRAND.name;
 const WEBSITE_URL = "https://taxivanbarcelona.com";
-const CONTACT_EMAIL = "email@taxivanbarcelona.com";
-const PHONE_E164 = "+34625099099";
-const ADDRESS = "Av Parallel 49, 08001 Barcelona, Spain";
+const CONTACT_EMAIL = BRAND.email;
+const PHONE_E164 = BRAND.phoneRaw;
+const ADDRESS = `${BRAND.address.street}, ${BRAND.address.postalCode} ${BRAND.address.city}, ${BRAND.address.country}`;
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Taxi Van Barcelona",
-  description:
-    "Read Taxi Van Barcelona’s Privacy Policy: what data we collect, how we use it, and your rights under GDPR.",
-  alternates: { canonical: "/privacy-policy" },
-  openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = normalizeLocale(await getLocale());
+  const alternates = metadataAlternates(locale, "/privacy-policy");
+  return {
     title: "Privacy Policy | Taxi Van Barcelona",
     description:
-      "Taxi Van Barcelona Privacy Policy (GDPR): data collection, use, retention, and your rights.",
-    url: "/privacy-policy",
-    type: "website",
-  },
-};
+      "Read Taxi Van Barcelona’s Privacy Policy: what data we collect, how we use it, and your rights under GDPR.",
+    alternates,
+    openGraph: {
+      title: "Privacy Policy | Taxi Van Barcelona",
+      description:
+        "Taxi Van Barcelona Privacy Policy (GDPR): data collection, use, retention, and your rights.",
+      url: alternates.canonical,
+      type: "website",
+    },
+  };
+}
 
-export default function PrivacyPolicyPage() {
+export default async function PrivacyPolicyPage() {
+  const locale = normalizeLocale(await getLocale());
+  const pagePath = "/privacy-policy";
+  const prefix = locale === "en" ? "" : `/${locale}`;
   const updatedDate = "December 21, 2025";
 
   const jsonLd = {
-    "@context": "https://schema.org",
     "@type": "WebPage",
     name: "Privacy Policy",
-    url: `${WEBSITE_URL}/privacy-policy`,
+    url: localizedAbsoluteUrl(locale, pagePath),
     isPartOf: {
       "@type": "WebSite",
       name: BUSINESS_NAME,
       url: WEBSITE_URL,
     },
   };
+  const breadcrumbJsonLd = {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: localizedAbsoluteUrl(locale, "/"),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Privacy Policy",
+        item: localizedAbsoluteUrl(locale, pagePath),
+      },
+    ],
+  };
+  const schemaJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [jsonLd, breadcrumbJsonLd],
+  };
 
   return (
     <>
-      <Script id="privacy-jsonld" type="application/ld+json" strategy="afterInteractive">
-        {JSON.stringify(jsonLd)}
-      </Script>
+      <script
+        id="privacy-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJsonLd) }}
+      />
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-black">
@@ -286,7 +321,7 @@ export default function PrivacyPolicyPage() {
                   WhatsApp
                 </a>
                 <Link
-                  href="/contact"
+                  href={`${prefix}/contact`}
                   className="rounded-full px-6 py-3 font-semibold border border-white/25 text-white hover:bg-white/10 transition"
                 >
                   Contact

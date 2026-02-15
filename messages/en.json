@@ -126,7 +126,7 @@
         },
         "pricing": {
           "title": "Transparent Pricing",
-          "desc": "No surprises—clear quotes and fair rates for popular routes. Prices starting from 35€."
+          "desc": "No surprises—clear quotes and fair rates for popular routes. Fixed pricing confirmed before travel.."
         },
         "meetGreet": {
           "title": "Meet & Greet",
@@ -194,14 +194,14 @@
     "hero": {
       "eyebrow": "Barcelona El Prat (T1 & T2) • 24/7",
       "title": "Barcelona Airport Taxi Van — Reliable Transfers for Groups",
-      "desc": "Avoid long taxi lines at El Prat. Pre-book a spacious 4–8 seater van with fixed pricing, professional drivers, and free child seats—so you land and go.",
+      "desc": "Avoid long taxi lines at El Prat. Pre-book a spacious 4–8 seater van with fixed pricing, professional drivers, and child seats available upon request—so you land and go.",
       "call": "Call to Book",
       "whatsapp": "WhatsApp",
       "features": {
         "fixed": "✓ Fixed pricing",
         "meet": "✓ Meet & greet",
         "luggage": "✓ Group luggage space",
-        "child": "✓ Free child seats"
+        "child": "✓ Child seats available upon request"
       }
     },
     "includes": {
@@ -217,10 +217,10 @@
         },
         "pricing": {
           "title": "Fixed pricing",
-          "desc": "Starting from 34€ (route-based)."
+          "desc": "Fixed pricing confirmed before travel."
         },
         "child": {
-          "title": "Free child seats",
+          "title": "Child seats available upon request",
           "desc": "On request—no extra cost."
         },
         "door": {
@@ -265,7 +265,7 @@
         "q1": "Do you offer fixed pricing for airport transfers?",
         "a1": "Yes. For common routes we confirm a clear price before pickup, based on passengers and luggage.",
         "q2": "How many passengers can the airport taxi van take?",
-        "a2": "Most trips are for 3–8 passengers depending on the van and luggage requirements.",
+        "a2": "Most trips are for 4–8 passengers depending on luggage requirements.",
         "q3": "Where will the driver meet us at BCN Airport?",
         "a3": "We confirm the terminal (T1/T2) and meeting point in advance. If meet & greet is included, we share clear instructions by WhatsApp.",
         "q4": "Can you take us from the airport to the cruise port?",
@@ -299,8 +299,8 @@
 
     "i1": "🚐 4–8 seater vans",
     "i2": "🧳 Large luggage capacity",
-    "i3": "💰 Fixed pricing from 34€",
-    "i4": "👶 Free child seats",
+    "i3": "💰 Fixed pricing confirmed before travel",
+    "i4": "👶 Child seats available upon request",
     "i5": "📍 Door-to-door service",
 
     "items": {
@@ -313,11 +313,11 @@
         "desc": "Space for suitcases and cruise luggage."
       },
       "pricing": {
-        "title": "Fixed pricing from 34€",
+        "title": "Fixed pricing confirmed before travel",
         "desc": "Confirmed before pickup—no surprises."
       },
       "child": {
-        "title": "Free child seats",
+        "title": "Child seats available upon request",
         "desc": "Available on request."
       },
       "door": {
@@ -650,7 +650,7 @@
   "contact": {
     "meta": {
       "title": "Contact Taxi Van Barcelona | WhatsApp, Call & Address",
-      "description": "Contact Taxi Van Barcelona by WhatsApp or phone 24/7. Find us at Av Parallel 49, 08001 Barcelona. Fast replies for airport, cruise, and long-distance transfers.",
+      "description": "Contact Taxi Van Barcelona by WhatsApp or phone 24/7. Find us at Av. Parallel 49, 08001 Barcelona. Fast replies for airport, cruise, and long-distance transfers.",
       "ogTitle": "Contact Taxi Van Barcelona",
       "ogDescription": "Message us on WhatsApp or call 24/7 for airport, cruise and long-distance transfers in Barcelona."
     },

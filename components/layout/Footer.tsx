@@ -1,10 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
+import { BRAND } from "@/config/brand";
 
-const PHONE_E164 = "+34625099099";
-const WHATSAPP_E164 = "34625099099";
-const EMAIL = "email@taxivanbarcelona.com";
-const ADDRESS = "Av Parallel 49, 08001 Barcelona";
+const ADDRESS = `${BRAND.address.street}, ${BRAND.address.postalCode} ${BRAND.address.city}`;
 
 export default async function Footer() {
   const year = new Date().getFullYear();
@@ -88,11 +87,12 @@ export default async function Footer() {
                   title={item.label}
                 >
                   <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition group-hover:opacity-100" />
-                  <img
+                  <Image
                     src={item.src}
                     alt={item.label}
+                    width={120}
+                    height={32}
                     className="max-h-8 max-w-[80%] object-contain transition-transform duration-200 group-hover:scale-[1.03]"
-                    loading="lazy"
                   />
                 </div>
               ))}
@@ -142,7 +142,7 @@ export default async function Footer() {
                   className="inline-flex items-center rounded-xl bg-white px-3 py-2 shadow-sm ring-1 ring-black/10 transition group-hover:shadow-md"
                   aria-hidden={false}
                 >
-                  <img
+                  <Image
                     src="/images/Taxi-barcelona.svg"
                     alt={tFooter("logoAlt")}
                     width={160}
@@ -164,30 +164,30 @@ export default async function Footer() {
             </p>
 
             <div className="mt-6 grid gap-3 text-sm">
-              <a
-                className="group inline-flex items-center gap-2 text-white/80 hover:text-white transition"
-                href={`tel:${PHONE_E164}`}
-              >
+                <a
+                  className="group inline-flex items-center gap-2 text-white/80 hover:text-white transition"
+                  href={`tel:${BRAND.phoneRaw}`}
+                >
                 <span
                   className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 transition group-hover:border-[rgba(217,167,64,0.55)]"
                   aria-hidden
                 >
                   📞
                 </span>
-                <span className="underline-offset-4 group-hover:underline">{PHONE_E164}</span>
+                <span className="underline-offset-4 group-hover:underline">{BRAND.phoneDisplay}</span>
               </a>
 
-              <a
-                className="group inline-flex items-center gap-2 text-white/80 hover:text-white transition"
-                href={`mailto:${EMAIL}`}
-              >
+                <a
+                  className="group inline-flex items-center gap-2 text-white/80 hover:text-white transition"
+                  href={`mailto:${BRAND.email}`}
+                >
                 <span
                   className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 transition group-hover:border-[rgba(217,167,64,0.55)]"
                   aria-hidden
                 >
                   ✉️
                 </span>
-                <span className="underline-offset-4 group-hover:underline">{EMAIL}</span>
+                <span className="underline-offset-4 group-hover:underline">{BRAND.email}</span>
               </a>
 
               <div className="inline-flex items-center gap-2 text-white/75">
@@ -326,7 +326,7 @@ export default async function Footer() {
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 <a
-                  href={`https://wa.me/${WHATSAPP_E164}`}
+                  href={BRAND.whatsappUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="px-4 py-2 rounded-full"
@@ -339,7 +339,7 @@ export default async function Footer() {
                   {tFooter("booking.whatsapp")}
                 </a>
                 <a
-                  href={`tel:${PHONE_E164}`}
+                  href={`tel:${BRAND.phoneRaw}`}
                   className="px-4 py-2 rounded-full"
                   style={{
                     background: "rgba(37,99,235,0.15)",
@@ -357,7 +357,7 @@ export default async function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
           <p className="text-xs text-white/60">
-            {tFooter("bottom.copyright", { year } as any)}
+            {tFooter("bottom.copyright", { year })}
           </p>
           <p className="text-xs text-white/60">
             {tFooter("bottom.built")}

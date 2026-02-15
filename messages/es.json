@@ -126,7 +126,7 @@
         },
         "pricing": {
           "title": "Precios transparentes",
-          "desc": "Sin sorpresas—presupuestos claros y tarifas justas en rutas populares. Precios desde 35€."
+          "desc": "Sin sorpresas—presupuestos claros y tarifas justas en rutas populares. Precio fijo confirmado antes del viaje."
         },
         "meetGreet": {
           "title": "Recepción (meet & greet)",
@@ -194,14 +194,14 @@
     "hero": {
       "eyebrow": "Aeropuerto Barcelona El Prat (T1 y T2) • 24/7",
       "title": "Taxi van al Aeropuerto de Barcelona — Traslados fiables para grupos",
-      "desc": "Evita las largas colas de taxi en El Prat. Reserva con antelación una van espaciosa de 4–8 plazas con precio fijo, conductores profesionales y sillas infantiles gratuitas—llega y continúa tu viaje sin estrés.",
+      "desc": "Evita las largas colas de taxi en El Prat. Reserva con antelación una van espaciosa de 4–8 plazas con precio fijo, conductores profesionales y sillas infantiles disponibles bajo solicitud—llega y continúa tu viaje sin estrés.",
       "call": "Llamar para reservar",
       "whatsapp": "WhatsApp",
       "features": {
         "fixed": "✓ Precio fijo",
         "meet": "✓ Recepción (meet & greet)",
         "luggage": "✓ Espacio para equipaje de grupos",
-        "child": "✓ Sillas infantiles gratuitas"
+        "child": "✓ Sillas infantiles disponibles bajo solicitud"
       }
     },
     "includes": {
@@ -217,10 +217,10 @@
         },
         "pricing": {
           "title": "Precio fijo",
-          "desc": "Desde 34 € (según la ruta)."
+          "desc": "Precio fijo confirmado antes del viaje."
         },
         "child": {
-          "title": "Sillas infantiles gratuitas",
+          "title": "Sillas infantiles disponibles bajo solicitud",
           "desc": "Bajo petición—sin coste adicional."
         },
         "door": {
@@ -265,7 +265,7 @@
         "q1": "¿Ofrecen precio fijo para traslados al aeropuerto?",
         "a1": "Sí. En rutas habituales confirmamos un precio claro antes de la recogida, según pasajeros y equipaje.",
         "q2": "¿Cuántos pasajeros puede llevar el taxi van al aeropuerto?",
-        "a2": "La mayoría de los traslados son para 3–8 pasajeros, según el tipo de van y el equipaje.",
+        "a2": "La mayoría de los traslados son para 4–8 pasajeros, según el equipaje.",
         "q3": "¿Dónde nos encontrará el conductor en el aeropuerto de BCN?",
         "a3": "Confirmamos con antelación el terminal (T1/T2) y el punto de encuentro. Si incluye meet & greet, enviamos instrucciones claras por WhatsApp.",
         "q4": "¿Pueden llevarnos del aeropuerto al puerto de cruceros?",
@@ -430,11 +430,11 @@
           "desc": "Espacio suficiente para maletas de crucero."
         },
         "pricing": {
-          "title": "Precio fijo desde 34€",
+          "title": "Precio fijo confirmado antes del viaje",
           "desc": "Confirmado antes de la recogida—sin sorpresas."
         },
         "child": {
-          "title": "Sillas infantiles gratuitas",
+          "title": "Sillas infantiles disponibles bajo solicitud",
           "desc": "Disponibles bajo petición."
         },
         "door": {
@@ -444,8 +444,8 @@
       },
       "i1": "🚐 Vans de 4–8 plazas",
       "i2": "🧳 Gran capacidad de equipaje",
-      "i3": "💰 Precio fijo desde 34€",
-      "i4": "👶 Sillas infantiles gratuitas",
+      "i3": "💰 Precio fijo confirmado antes del viaje",
+      "i4": "👶 Sillas infantiles disponibles bajo solicitud",
       "i5": "📍 Servicio puerta a puerta"
     },
     "whyChoose": {
@@ -717,7 +717,7 @@
   "contact": {
     "meta": {
       "title": "Contacto Taxi Van Barcelona | WhatsApp, llamada y dirección",
-      "description": "Contacta con Taxi Van Barcelona por WhatsApp o teléfono 24/7. Estamos en Av Parallel 49, 08001 Barcelona. Respuestas rápidas para traslados de aeropuerto, cruceros y larga distancia.",
+      "description": "Contacta con Taxi Van Barcelona por WhatsApp o teléfono 24/7. Estamos en Av. Parallel 49, 08001 Barcelona. Respuestas rápidas para traslados de aeropuerto, cruceros y larga distancia.",
       "ogTitle": "Contacto Taxi Van Barcelona",
       "ogDescription": "Escríbenos por WhatsApp o llama 24/7 para traslados de aeropuerto, cruceros y larga distancia en Barcelona."
     },

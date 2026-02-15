@@ -1,17 +1,25 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
+import {
+  BRAND,
+  localizedAbsoluteUrl,
+  metadataAlternates,
+  normalizeLocale,
+  type AppLocale,
+} from "@/config/brand";
 
-const PHONE_E164 = "+34625099099";
-const WHATSAPP_E164 = "34625099099";
+const PHONE_E164 = BRAND.phoneRaw;
+const WHATSAPP_E164 = BRAND.phoneRaw.replace("+", "");
 
 export async function generateMetadata(): Promise<Metadata> {
-  let locale = "en";
+  let locale: AppLocale = "en";
   try {
-    locale = await getLocale();
+    locale = normalizeLocale(await getLocale());
   } catch {
-    // ignore
+    locale = "en";
   }
 
   let t: any;
@@ -41,21 +49,23 @@ export async function generateMetadata(): Promise<Metadata> {
     "Meet Taxi Van Barcelona — providing taxi for airport and long-distance transfers with fixed pricing and 24/7 availability across Barcelona."
   );
 
+  const alternates = metadataAlternates(locale, "/about-taxi-van-barcelona");
   return {
     title,
     description,
-    alternates: { canonical: "/about-taxi-van-barcelona" },
+    alternates,
     openGraph: {
       title: tt("meta.ogTitle", title),
       description: tt("meta.ogDescription", description),
-      url: "/about-taxi-van-barcelona",
+      url: alternates.canonical,
       type: "website",
     },
   };
 }
 
 export default async function AboutTaxiVanBarcelonaPage() {
-  const locale = await getLocale();
+  const locale = normalizeLocale(await getLocale());
+  const pagePath = "/about-taxi-van-barcelona";
   const prefix = locale === "en" ? "" : `/${locale}`;
 
   let t: any;
@@ -80,9 +90,32 @@ export default async function AboutTaxiVanBarcelonaPage() {
   };
 
   const introBadgeText = (tt("hero.title", "About Taxi Van Barcelona") || "About Taxi Van Barcelona").toUpperCase();
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: localizedAbsoluteUrl(locale, "/"),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About Taxi Van Barcelona",
+        item: localizedAbsoluteUrl(locale, pagePath),
+      },
+    ],
+  };
 
   return (
     <>
+      <script
+        id="about-breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-black">
         {/* soft gold corner accents + subtle vignette */}

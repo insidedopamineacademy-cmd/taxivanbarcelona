@@ -1,11 +1,19 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import Link from "next/link";
+import {
+  BRAND,
+  localizedAbsoluteUrl,
+  metadataAlternates,
+  normalizeLocale,
+  type AppLocale,
+} from "@/config/brand";
 
-const PHONE_E164 = "+34625099099";
-const WHATSAPP_E164 = "34625099099";
-const EMAIL = "info@taxivanbarcelona.com";
-const ADDRESS = "Av Parallel 49, 08001 Barcelona";
+const PHONE_E164 = BRAND.phoneRaw;
+const WHATSAPP_E164 = BRAND.phoneRaw.replace("+", "");
+const EMAIL = BRAND.email;
+const ADDRESS = `${BRAND.address.street}, ${BRAND.address.postalCode} ${BRAND.address.city}`;
 
 const GMAPS_QUERY = encodeURIComponent(ADDRESS);
 const GOOGLE_MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${GMAPS_QUERY}`;
@@ -17,11 +25,11 @@ const MAILTO_BODY = encodeURIComponent(
 const MAILTO_LINK = `mailto:${EMAIL}?subject=${MAILTO_SUBJECT}&body=${MAILTO_BODY}`;
 
 export async function generateMetadata(): Promise<Metadata> {
-  let locale = "en";
+  let locale: AppLocale = "en";
   try {
-    locale = await getLocale();
+    locale = normalizeLocale(await getLocale());
   } catch {
-    // ignore
+    locale = "en";
   }
 
   let t: any;
@@ -42,27 +50,29 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = tr("meta.title", "Contact Taxi Van Barcelona | WhatsApp, Call & Address");
   const description = tr(
     "meta.description",
-    "Contact Taxi Van Barcelona by WhatsApp or phone 24/7. Find us at Av Parallel 49, 08001 Barcelona. Fast replies for airport, cruise, and long-distance transfers."
+    `Contact Taxi Van Barcelona by WhatsApp or phone 24/7. Find us at ${BRAND.address.street}, ${BRAND.address.postalCode} ${BRAND.address.city}. Fast replies for airport, cruise, and long-distance transfers.`
   );
 
+  const alternates = metadataAlternates(locale, "/contact");
   return {
     title,
     description,
-    alternates: { canonical: "/contact" },
+    alternates,
     openGraph: {
       title: tr("meta.ogTitle", "Contact Taxi Van Barcelona"),
       description: tr(
         "meta.ogDescription",
         "Message us on WhatsApp or call 24/7 for airport, cruise and long-distance transfers in Barcelona."
       ),
-      url: "/contact",
+      url: alternates.canonical,
       type: "website",
     },
   };
 }
 
 export default async function ContactPage() {
-  const locale = await getLocale();
+  const locale = normalizeLocale(await getLocale());
+  const pagePath = "/contact";
   const prefix = locale === "en" ? "" : `/${locale}`;
 
   let t: any;
@@ -79,9 +89,32 @@ export default async function ContactPage() {
       return fallback;
     }
   };
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: localizedAbsoluteUrl(locale, "/"),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contact",
+        item: localizedAbsoluteUrl(locale, pagePath),
+      },
+    ],
+  };
 
   return (
     <>
+      <script
+        id="contact-breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-black">
         {/* diagonal gold accents */}

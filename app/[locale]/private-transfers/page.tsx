@@ -1,19 +1,26 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ExpressBookingCard from "@/components/layout/booking/ExpressBookingCard";
 import { getLocale, getTranslations } from "next-intl/server";
+import {
+  BRAND,
+  localizedAbsoluteUrl,
+  metadataAlternates,
+  normalizeLocale,
+  type AppLocale,
+} from "@/config/brand";
 
-const WHATSAPP_E164 = "34625099099";
+const WHATSAPP_E164 = BRAND.phoneRaw.replace("+", "");
+const PHONE_E164 = BRAND.phoneRaw;
 
 export async function generateMetadata(): Promise<Metadata> {
-  // Default to EN for metadata generation; page itself uses `getLocale()`.
-  // This prevents build/runtime errors if metadata is evaluated before locale context.
-  let locale = "en";
+  let locale: AppLocale = "en";
   try {
-    locale = await getLocale();
+    locale = normalizeLocale(await getLocale());
   } catch {
-    // ignore
+    locale = "en";
   }
 
   let t: any;
@@ -40,24 +47,26 @@ export async function generateMetadata(): Promise<Metadata> {
     "Premium private transfers in Barcelona with executive vehicles and luxury vans. Ideal for MWC / Fira Gran Via conferences, corporate travel, weddings, and VIP events. Book fast on WhatsApp."
   );
 
+  const alternates = metadataAlternates(locale, "/private-transfers");
   return {
     title,
     description,
-    alternates: { canonical: "/private-transfers" },
+    alternates,
     openGraph: {
       title: tr("meta.ogTitle", "Private Transfers Barcelona | Premium Chauffeur Service"),
       description: tr(
         "meta.ogDescription",
         "Executive private transfers for conferences (MWC / Fira Gran Via), business, and VIP events in Barcelona."
       ),
-      url: "/private-transfers",
+      url: alternates.canonical,
       type: "website",
     },
   };
 }
 
 export default async function PrivateTransfersPage() {
-  const locale = await getLocale();
+  const locale = normalizeLocale(await getLocale());
+  const pagePath = "/private-transfers";
   const prefix = locale === "en" ? "" : `/${locale}`;
 
   let t: any;
@@ -74,9 +83,60 @@ export default async function PrivateTransfersPage() {
       return fallback;
     }
   };
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `${BRAND.name} Private Transfers`,
+    serviceType: "Private executive and chauffeur transfers",
+    provider: { "@id": "https://taxivanbarcelona.com/#localbusiness" },
+    areaServed: "Barcelona",
+    availableChannel: [
+      {
+        "@type": "ServiceChannel",
+        name: "Online booking",
+        serviceUrl: "https://taxivanbarcelona.com/contact",
+      },
+      {
+        "@type": "ServiceChannel",
+        name: "Telephone",
+        telephone: PHONE_E164,
+      },
+      {
+        "@type": "ServiceChannel",
+        name: "WhatsApp",
+        serviceUrl: BRAND.whatsappUrl,
+      },
+    ],
+  };
+  const breadcrumbJsonLd = {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: localizedAbsoluteUrl(locale, "/"),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Private Transfers",
+        item: localizedAbsoluteUrl(locale, pagePath),
+      },
+    ],
+  };
+  const schemaJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [serviceJsonLd, breadcrumbJsonLd],
+  };
 
   return (
     <>
+      <script
+        id="private-service-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJsonLd) }}
+      />
       {/* HERO — Premium Black + Neon Blue */}
       <section className="neo-hero">
         <div className="neo-hero__glow" aria-hidden />

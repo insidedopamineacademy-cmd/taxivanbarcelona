@@ -1,17 +1,16 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
+import Script from "next/script";
+import { BRAND, languageAlternates, SITE_URL } from "@/config/brand";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Taxi Van Barcelona | Airport, Cruise & Long-Distance Transfers",
   description:
     "Book a spacious taxi van in Barcelona for airport transfers, cruise port pickup, and long-distance trips.",
   alternates: {
-    languages: {
-      en: "/",
-      es: "/es",
-      it: "/it",
-      de: "/de",
-    },
+    canonical: languageAlternates("/").en,
+    languages: languageAlternates("/"),
   },
 };
 
@@ -19,14 +18,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html suppressHydrationWarning>
       <body className="min-h-screen bg-white text-gray-900 antialiased">
+        {/* Google Tag Manager */}
+        <Script id="gtm" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N9QTR7FV');`}
+        </Script>
+
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-N9QTR7FV"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
         {children}
 
         {/* Floating buttons */}
         <div className="floating-actions" aria-label="Quick contact">
           {/* Call */}
           <a
-            href="tel:+34625099099"
-            aria-label="Call Taxi Van Barcelona"
+            href={`tel:${BRAND.phoneRaw}`}
+            aria-label={`Call ${BRAND.name}`}
             className="floating-action floating-action--call"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
@@ -39,10 +57,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           {/* WhatsApp */}
           <a
-            href="https://wa.me/34625099099"
+            href={BRAND.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="WhatsApp Taxi Van Barcelona"
+            aria-label={`WhatsApp ${BRAND.name}`}
             className="floating-action floating-action--wa"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
