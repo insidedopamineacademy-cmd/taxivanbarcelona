@@ -223,7 +223,7 @@ export default async function Footer() {
                     height="18"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    className="text-white/70 group-hover:text-white"
+                    className="text-[#E1306C] group-hover:text-[#F77737] transition-colors"
                   >
                     <path d="M7.75 2C4.68 2 2.25 4.43 2.25 7.5v9c0 3.07 2.43 5.5 5.5 5.5h8.5c3.07 0 5.5-2.43 5.5-5.5v-9C21.75 4.43 19.32 2 16.25 2h-8.5zm0 1.5h8.5c2.24 0 4 1.76 4 4v9c0 2.24-1.76 4-4 4h-8.5c-2.24 0-4-1.76-4-4v-9c0-2.24 1.76-4 4-4zm9.25 1.75a.88.88 0 100 1.75.88.88 0 000-1.75zM12 7a5 5 0 100 10 5 5 0 000-10zm0 1.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7z" />
                   </svg>
