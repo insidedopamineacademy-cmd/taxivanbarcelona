@@ -373,7 +373,12 @@ export default function ExpressBookingCard({
     const d = new Date(`${whenDate}T${whenTime}`);
     if (Number.isNaN(d.getTime())) return s.whenSchedule;
 
-    return d.toLocaleString(locale);
+    const day = String(d.getDate()).padStart(2, "0");
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const year = d.getFullYear();
+    const time = d.toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit" });
+
+    return `${day}/${month}/${year} ${time}`;
   }
 
   function buildWhatsAppMessage(): string {
