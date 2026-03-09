@@ -578,12 +578,12 @@ export default function ExpressBookingCard({
 
             {/* Phone */}
             <div className="grid grid-cols-[110px_1fr] gap-2">
-              <div className="h-11 rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
+              <div className="relative h-11 rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
                 <select
                   value={phoneDial}
                   onChange={(e) => setPhoneDial(e.target.value)}
                   aria-label={s.phoneLabel}
-                  className="h-full w-full rounded-xl bg-transparent px-2.5 text-[13px] text-white outline-none"
+                  className="h-full w-full appearance-none rounded-xl bg-transparent px-2.5 pr-8 text-[13px] text-white outline-none"
                 >
                   {!dialOptions ? (
                     <>
@@ -611,6 +611,11 @@ export default function ExpressBookingCard({
                     })
                   )}
                 </select>
+                <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-white/65">
+                  <svg width="12" height="12" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M5 7.5 10 12.5 15 7.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
               </div>
 
               <div className="h-11 w-full rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
@@ -629,7 +634,7 @@ export default function ExpressBookingCard({
 
             {/* When + Pax + Bags (3-col compact row) */}
             <div className="grid grid-cols-3 gap-2">
-              <div className="h-11 rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
+              <div className="relative h-11 rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
                 <select
                   value={whenMode}
                   onChange={(e) => {
@@ -641,7 +646,7 @@ export default function ExpressBookingCard({
                     }
                   }}
                   aria-label={s.whenLabel}
-                  className="h-full w-full rounded-xl bg-transparent px-2.5 text-[13px] text-white outline-none"
+                  className="h-full w-full appearance-none rounded-xl bg-transparent px-2.5 pr-8 text-[13px] text-white outline-none"
                 >
                   <option value="now" className="bg-slate-900">
                     {s.whenNow}
@@ -650,14 +655,19 @@ export default function ExpressBookingCard({
                     {s.whenSchedule}
                   </option>
                 </select>
+                <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-white/65">
+                  <svg width="12" height="12" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M5 7.5 10 12.5 15 7.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
               </div>
 
-              <div className="h-11 rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
+              <div className="relative h-11 rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
                 <select
                   value={pax}
                   onChange={(e) => setPax(parseInt(e.target.value, 10))}
                   aria-label={s.passengersLabel}
-                  className="h-full w-full rounded-xl bg-transparent px-2.5 text-[13px] text-white outline-none"
+                  className="h-full w-full appearance-none rounded-xl bg-transparent px-2.5 pr-8 text-[13px] text-white outline-none"
                 >
                   {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
                     <option key={n} value={n} className="bg-slate-900">
@@ -665,14 +675,19 @@ export default function ExpressBookingCard({
                     </option>
                   ))}
                 </select>
+                <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-white/65">
+                  <svg width="12" height="12" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M5 7.5 10 12.5 15 7.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
               </div>
 
-              <div className="h-11 rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
+              <div className="relative h-11 rounded-xl border border-white/12 bg-white/6 backdrop-blur-sm">
                 <select
                   value={bags}
                   onChange={(e) => setBags(parseInt(e.target.value, 10))}
                   aria-label={s.luggageLabel}
-                  className="h-full w-full rounded-xl bg-transparent px-2.5 text-[13px] text-white outline-none"
+                  className="h-full w-full appearance-none rounded-xl bg-transparent px-2.5 pr-8 text-[13px] text-white outline-none"
                 >
                   {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
                     <option key={n} value={n} className="bg-slate-900">
@@ -680,6 +695,11 @@ export default function ExpressBookingCard({
                     </option>
                   ))}
                 </select>
+                <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-white/65">
+                  <svg width="12" height="12" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M5 7.5 10 12.5 15 7.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
               </div>
             </div>
 
@@ -697,7 +717,7 @@ export default function ExpressBookingCard({
                     value={whenDate}
                     onChange={(e) => setWhenDate(e.target.value)}
                     aria-label={s.dateLabel}
-                    className="h-full w-full rounded-xl bg-transparent px-3 text-[13px] text-white outline-none [color-scheme:dark]"
+                    className={`h-full w-full rounded-xl bg-transparent px-3 pr-10 text-[13px] outline-none [color-scheme:dark] ${whenDate ? "text-white" : "text-transparent"}`}
                   />
                 </div>
 
@@ -712,7 +732,7 @@ export default function ExpressBookingCard({
                     value={whenTime}
                     onChange={(e) => setWhenTime(e.target.value)}
                     aria-label={s.timeLabel}
-                    className="h-full w-full rounded-xl bg-transparent px-3 text-[13px] text-white outline-none [color-scheme:dark]"
+                    className={`h-full w-full rounded-xl bg-transparent px-3 pr-10 text-[13px] outline-none [color-scheme:dark] ${whenTime ? "text-white" : "text-transparent"}`}
                   />
                 </div>
               </div>

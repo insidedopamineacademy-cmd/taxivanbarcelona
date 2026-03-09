@@ -116,30 +116,12 @@ export default async function HomePage() {
       {/* HERO (premium black + gold vignette) */}
       <section
         className="relative overflow-hidden min-h-[calc(100svh-72px)] md:min-h-0"
-        style={{ background: "#070A0F" }}
+        style={{
+          backgroundImage:
+            "linear-gradient(180deg, #000000 0%, #333333 100%)",
+        }}
       >
-        {/* Gold diagonal accents */}
-        <div
-          className="absolute inset-0 pointer-events-none select-none"
-          aria-hidden="true"
-          style={{
-            backgroundImage:
-              "linear-gradient(135deg, rgba(250,204,21,0.85) 0%, rgba(250,204,21,0.85) 7%, transparent 7%, transparent 100%), linear-gradient(315deg, rgba(250,204,21,0.85) 0%, rgba(250,204,21,0.85) 7%, transparent 7%, transparent 100%)",
-            backgroundPosition: "left top, right bottom",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "360px 360px, 360px 360px",
-            opacity: 0.42,
-          }}
-        />
-        {/* Soft black→gold fade (premium vignette) */}
-        <div
-          className="absolute inset-0 pointer-events-none select-none"
-          aria-hidden="true"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 18% 18%, rgba(250,204,21,0.16), transparent 46%), radial-gradient(circle at 85% 80%, rgba(250,204,21,0.10), transparent 55%), radial-gradient(circle at 50% 50%, rgba(255,255,255,0.06), transparent 60%), linear-gradient(0deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.70) 100%)",
-          }}
-        />
+
 
         <div className="container-page relative py-16 md:py-20 min-h-[calc(100svh-72px)] flex items-center">
           <div className="w-full">
