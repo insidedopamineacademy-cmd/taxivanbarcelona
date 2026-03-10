@@ -138,10 +138,14 @@ export default async function PrivateTransfersPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJsonLd) }}
       />
       {/* HERO — Premium Black + Neon Blue */}
-      <section className="neo-hero">
-        <div className="neo-hero__glow" aria-hidden />
-        <div className="neo-hero__grid" aria-hidden />
-        <div className="container-page neo-hero__inner">
+      <section
+        className="neo-hero min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] md:min-h-0"
+        style={{
+          background:
+            "radial-gradient(circle at 20% 30%, rgba(255,200,80,0.12), transparent 40%), linear-gradient(180deg, #000000, #050505 60%, #0b0b0b)",
+        }}
+      >
+        <div className="container-page neo-hero__inner min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] md:min-h-0 flex items-center pb-10 md:pb-0">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
             <div className="order-1 lg:order-none lg:col-span-7">
               <p className="neo-kicker">

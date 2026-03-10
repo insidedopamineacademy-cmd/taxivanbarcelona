@@ -106,30 +106,12 @@ export default async function AirportTaxiPage() {
       />
       {/* HERO (clean + aligned) */}
       <section
-        className="relative overflow-hidden bg-black min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] md:min-h-0"
-        style={{ background: "rgb(10,10,10)" }}
+        className="relative overflow-hidden min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] md:min-h-0"
+        style={{
+          background:
+            "radial-gradient(circle at 20% 30%, rgba(255,200,80,0.12), transparent 40%), linear-gradient(180deg, #000000, #050505 60%, #0b0b0b)",
+        }}
       >
-        {/* gold diagonal accents */}
-        <div
-          className="absolute inset-0 opacity-50"
-          aria-hidden="true"
-          style={{
-            backgroundImage:
-              "linear-gradient(135deg, rgba(223,178,77,0.92) 0%, rgba(223,178,77,0.92) 8%, transparent 8%, transparent 100%), linear-gradient(315deg, rgba(223,178,77,0.92) 0%, rgba(223,178,77,0.92) 8%, transparent 8%, transparent 100%)",
-            backgroundPosition: "left top, right bottom",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "420px 420px, 420px 420px",
-          }}
-        />
-        {/* Soft black→gold fade (premium vignette like About hero) */}
-        <div
-          className="absolute inset-0"
-          aria-hidden="true"
-          style={{
-            backgroundImage:
-              "radial-gradient(900px 600px at 20% 15%, rgba(223,178,77,0.20) 0%, rgba(223,178,77,0.06) 35%, transparent 70%), radial-gradient(900px 600px at 85% 80%, rgba(223,178,77,0.16) 0%, rgba(223,178,77,0.05) 35%, transparent 70%), linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.55) 100%)",
-          }}
-        />
 
         <div className="container-page relative py-16 md:py-24 min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] md:min-h-0 flex items-center pb-10 md:pb-0">
           <div className="w-full">

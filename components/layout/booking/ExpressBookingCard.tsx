@@ -750,7 +750,7 @@ export default function ExpressBookingCard({
             <button
               type="button"
               onClick={onConfirm}
-              className="mt-1 h-11 w-full inline-flex items-center justify-center rounded-xl px-5 font-extrabold text-[14px] bg-gradient-to-r from-[#10b981] to-[#22c55e] text-black shadow-[0_12px_40px_rgba(16,185,129,0.30)] hover:brightness-110 transition"
+              className="booking-whatsapp-btn mt-1 h-11 w-full inline-flex items-center justify-center rounded-xl px-5 font-extrabold text-[14px] bg-gradient-to-r from-[#10b981] to-[#22c55e] text-black shadow-[0_12px_40px_rgba(16,185,129,0.30)] hover:brightness-110 transition"
             >
               {s.sendViaWhatsApp}
             </button>

@@ -153,6 +153,19 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+/* Homepage header variant */
+.site-header.site-header--home {
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-header.site-header--home.is-scrolled {
+  background: rgba(0, 0, 0, 0.72);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
+}
+
 .header-inner {
   max-width: 80rem;
   margin: 0 auto;
@@ -262,6 +275,26 @@
   transform: scaleX(1);
 }
 
+.site-header.site-header--home .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.site-header.site-header--home .nav-link:hover {
+  color: #fbbf24;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.site-header.site-header--home .menu-btn {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.site-header.site-header--home .menu-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
+}
+
 .header-ctas {
   display: inline-flex;
   align-items: center;
@@ -277,6 +310,16 @@
 
 @media (max-width: 767px) {
   .header-ctas--desktop { display: none !important; }
+}
+
+.site-header.site-header--home .cta-call {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.site-header.site-header--home .cta-call:hover {
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .header-menu {
@@ -872,6 +915,45 @@
 
 .neo-card__footerTitle{font-weight:900;color:rgba(255,255,255,0.92);}
 .neo-card__footerText{margin-top:2px;color:rgba(255,255,255,0.72);font-size:13px;}
+
+/* Homepage booking card (UI only) */
+.home-booking-card > div{
+  background: rgba(20,20,20,0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 20px 80px rgba(0,0,0,0.8),
+    0 0 0 1px rgba(255,255,255,0.03);
+}
+
+.home-booking-card .bg-\[rgba\(2\,6\,23\,0\.10\)\]{
+  background: rgba(20,20,20,0.45);
+}
+
+.home-booking-card .border-white\/12.bg-white\/6{
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.home-booking-card .border-white\/12.bg-white\/6:focus-within{
+  border-color: rgba(255,255,255,0.35);
+}
+
+.home-booking-card input:focus,
+.home-booking-card select:focus{
+  outline: none;
+}
+
+.home-booking-card .booking-whatsapp-btn{
+  background: linear-gradient(90deg, #10b981, #22c55e);
+  box-shadow: 0 12px 40px rgba(16,185,129,0.35);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.home-booking-card .booking-whatsapp-btn:hover{
+  transform: translateY(-1px);
+}
 
  :where(.neo-panel),
  :where(.neo-fleet){

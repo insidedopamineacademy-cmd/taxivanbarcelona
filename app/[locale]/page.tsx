@@ -30,6 +30,22 @@ export default async function HomePage() {
   const locale = normalizeLocale(await getLocale());
   const t = await getTranslations();
   const quickFacts = getQuickFacts("home", locale);
+  const heroTitle = t("home.hero.title", {
+    default: "Taxi Van Barcelona for Airport, Cruise & Long-Distance Transfers",
+  });
+  const accentIndex = heroTitle.indexOf("Barcelona");
+  const heroTitleAccent =
+    accentIndex >= 0 ? (
+      <>
+        {heroTitle.slice(0, accentIndex)}
+        <span style={{ color: "#fbbf24" }}>
+          {heroTitle.slice(accentIndex, accentIndex + "Barcelona".length)}
+        </span>
+        {heroTitle.slice(accentIndex + "Barcelona".length)}
+      </>
+    ) : (
+      heroTitle
+    );
 
   const prefix = locale === "en" ? "" : `/${locale}`;
   const jsonLd = {
@@ -117,8 +133,8 @@ export default async function HomePage() {
       <section
         className="relative overflow-hidden min-h-[calc(100svh-72px)] md:min-h-0"
         style={{
-          backgroundImage:
-            "linear-gradient(180deg, #000000 0%, #333333 100%)",
+          background:
+            "radial-gradient(circle at 20% 30%, rgba(255,200,80,0.12), transparent 40%), linear-gradient(180deg, #000000, #050505 60%, #0b0b0b)",
         }}
       >
 
@@ -127,13 +143,11 @@ export default async function HomePage() {
           <div className="w-full">
             <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
               <div className="order-1 lg:order-none lg:col-span-7">
-                <p className="text-white/70 text-sm tracking-wide">
-                  {t("home.hero.eyebrow", { default: "Barcelona • 4–8 seater vans • 24–7 support" })}
+                <p className="text-[12px] tracking-[0.15em] uppercase text-[rgba(255,255,255,0.6)]">
+                  Barcelona • Airport & Cruise Transfers • 4–8 Passenger Vans • 24/7 Service
                 </p>
                 <h1 className="mt-4 text-white text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
-                  {t("home.hero.title", {
-                    default: "Taxi Van Barcelona for Airport, Cruise & Long-Distance Transfers",
-                  })}
+                  {heroTitleAccent}
                 </h1>
 
                 {/* Desktop subtitle (keeps spacing tight on desktop) */}
@@ -151,7 +165,7 @@ export default async function HomePage() {
               <div className="order-2 lg:order-none lg:col-span-5">
                 <ExpressBookingCard
                   whatsappE164={WHATSAPP_E164}
-                  className="neo-card neo-card--booking"
+                  className="home-booking-card"
                 />
               </div>
 
@@ -166,6 +180,17 @@ export default async function HomePage() {
                   })}
                 </p>
               </div>
+            </div>
+            <div className="mt-6 flex flex-wrap items-center gap-2 text-[12px] text-white/70">
+              {["Free cancellation", "Meet & greet included", "No hidden fees"].map((item) => (
+                <span
+                  key={item}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3 py-1.5"
+                >
+                  <span aria-hidden className="text-[#fbbf24]">✓</span>
+                  <span>{item}</span>
+                </span>
+              ))}
             </div>
           </div>
         </div>
