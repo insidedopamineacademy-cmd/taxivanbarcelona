@@ -375,7 +375,6 @@
       "call": "Llamar",
       "whatsapp": "WhatsApp"
     },
-
     "trust": {
       "title": "Diseñado para la comodidad en viajes largos",
       "desc": "En rutas largas necesitas algo más que un trayecto. Priorizamos comodidad, vehículos limpios y conductores puntuales para que tu viaje sea tranquilo de principio a fin.",
@@ -464,14 +463,30 @@
       "b2": "✅ Vans de 4 a 8 plazas para familias y grupos",
       "b3": "✅ Espacio amplio para equipaje de crucero",
       "b4": "✅ Conductores profesionales y multilingües",
-      "b5": "✅ Precio fijo — sin sorpresas"
+      "b5": "✅ Precio fijo — sin sorpresas",
+      "desc": "Cruise arrivals can be unpredictable—but your transfer shouldn’t be. We monitor ship schedules and adapt pickup times so your driver is ready when you disembark.",
+      "items": {
+        "pickup": "Direct pickup from Moll Adossat & Port Vell",
+        "vans": "4–8 seater vans for families and groups",
+        "space": "Plenty of space for cruise luggage",
+        "drivers": "Professional, multilingual drivers",
+        "pricing": "Fixed pricing — no surprises"
+      }
     },
     "where": {
       "title": "A dónde te llevamos",
       "i1": "• Hoteles y apartamentos en Barcelona",
       "i2": "• Aeropuerto de Barcelona (El Prat)",
       "i3": "• Estaciones de tren (Sants, França)",
-      "i4": "• Viajes de larga distancia por España"
+      "i4": "• Viajes de larga distancia por España",
+      "items": {
+        "hotels": "Hotels & apartments across Barcelona",
+        "airport": "Barcelona Airport (El Prat)",
+        "stations": "Train stations (Sants, França)",
+        "long": "Long-distance trips across Catalonia"
+      },
+      "call": "Call",
+      "whatsapp": "WhatsApp"
     },
     "tours": {
       "title": "Tours por Barcelona para pasajeros de crucero",
@@ -491,7 +506,8 @@
         "shopping": "Compras y sightseeing (La Roca Village bajo petición)",
         "family": "Rutas familiares (sillas infantiles disponibles)"
       },
-      "note": "Indícanos el nombre del barco, la hora de atraque y los lugares imprescindibles—te proponemos la mejor ruta."
+      "note": "Indícanos el nombre del barco, la hora de atraque y los lugares imprescindibles—te proponemos la mejor ruta.",
+      "desc": "Only in Barcelona for a few hours? Book a flexible city tour directly from the cruise terminal. We tailor the route to your schedule and bring you back to the ship on time."
     },
     "faq": {
       "title": "Preguntas frecuentes",
@@ -560,7 +576,9 @@
         "missingDestination": "Por favor, indica el destino.",
         "mapsUnavailable": "Los mapas no están disponibles temporalmente. Escribe la recogida y el destino manualmente.",
         "geolocationDenied": "El acceso a la ubicación está bloqueado. Actívalo en la configuración del navegador."
-      }
+      },
+      "phoneNumberPlaceholder": "Phone number",
+      "phoneLabel": "Phone"
     },
     "whatsapp": {
       "header": "Nueva solicitud de reserva",
@@ -571,7 +589,8 @@
       "luggage": "Equipaje",
       "eta": "ETA",
       "distance": "Distancia",
-      "notes": "Notas"
+      "notes": "Notas",
+      "phone": "Phone"
     }
   },
   "privateTransfers": {
@@ -726,7 +745,8 @@
       "title": "Contacta con Taxi Van Barcelona",
       "subtitle": "¿Quieres reservar rápido? Escríbenos por WhatsApp o llama directamente. Respondemos rápido y confirmamos los detalles de tu viaje con claridad — para que viajes con tranquilidad.",
       "ctaWhatsApp": "WhatsApp ahora",
-      "ctaCall": "Llamar ahora"
+      "ctaCall": "Llamar ahora",
+      "ctaEmail": "Send Email"
     },
     "cards": {
       "whatsapp": {
@@ -746,7 +766,9 @@
         "label": "Email",
         "title": "Enviar una solicitud",
         "desc": "Mejor para solicitudes corporativas, facturas o planificación de varios días.",
-        "cta": "Enviar email →"
+        "cta": "Enviar email →",
+        "openGmail": "Or compose in Gmail",
+        "helper": "Opens your default email app"
       }
     },
     "find": {
@@ -775,22 +797,23 @@
       "subtitle": "Ofrecemos traslados fiables en taxi van en Barcelona para turistas, familias y grupos. Desde el aeropuerto y el puerto de cruceros hasta viajes de larga distancia: priorizamos puntualidad, comunicación clara y comodidad.",
       "ctaCall": "Llamar ahora",
       "ctaWhatsApp": "WhatsApp",
-      "trust": [
-        "Precio fijo o taxímetro (según la ruta)",
-        "Recepción (meet & greet) disponible",
-        "Grupos y equipaje: más espacio",
-        "Sillas infantiles gratis bajo petición"
-      ],
+      "trust": {
+        "0": "Door-to-door transfers",
+        "1": "Vans with luggage space",
+        "2": "Professional drivers",
+        "3": "Fixed pricing on request"
+      },
       "card": {
         "title": "Pensado para viajeros internacionales",
         "desc": "Reservas rápidas por WhatsApp, recogidas puntuales y vans amplias para que tu traslado sea sencillo desde el primer mensaje.",
-        "tags": [
-          "Aeropuerto BCN",
-          "Puerto de cruceros",
-          "Larga distancia"
-        ]
+        "tags": {
+          "0": "Airport",
+          "1": "Cruise Port",
+          "2": "Long Distance"
+        }
       },
-      "caption": "Barcelona — traslados cómodos para familias y grupos"
+      "caption": "Barcelona — traslados cómodos para familias y grupos",
+      "imageAlt": "Taxi Van Barcelona fleet: spacious vans in Barcelona"
     },
     "highlights": {
       "title": "Qué nos hace diferentes",
@@ -816,7 +839,19 @@
     "story": {
       "title": "Nuestra misión",
       "p1": "Taxi Van Barcelona nació para hacer que los traslados en Barcelona sean simples y cómodos para grupos. Cuando viajas con maletas, niños o en familia, un taxi normal muchas veces no es suficiente.",
-      "p2": "Por eso nos enfocamos en vans espaciosas, confirmaciones rápidas y un servicio claro desde el primer mensaje."
+      "p2": "Por eso nos enfocamos en vans espaciosas, confirmaciones rápidas y un servicio claro desde el primer mensaje.",
+      "imageAlt": "Taxi Van Barcelona: spacious vans in Barcelona",
+      "imageCaption": "Spacious vans, clean interiors, professional service",
+      "body": "We built Taxi Van Barcelona for people who value comfort and clarity. So we keep it simple: you message or call, we confirm the details, and we arrive on time. Also, we support international travelers—so communication stays easy from the first message to your final stop.",
+      "bullets": {
+        "0": "• Clean 4–8 seater vans with luggage space",
+        "1": "• Friendly, professional drivers",
+        "2": "• Door-to-door transfers across Barcelona & nearby",
+        "3": "• 24/7 availability, including weekends & holidays",
+        "4": "• Transparent quotes (fixed pricing on request)"
+      },
+      "ctaAirport": "Airport Taxi",
+      "ctaCruise": "Cruise Port Pickup"
     },
     "services": {
       "title": "En qué nos especializamos",
@@ -832,6 +867,25 @@
         "long": {
           "title": "Larga distancia",
           "desc": "Sitges, Girona, Tarragona, Costa Brava y rutas a medida por Cataluña."
+        }
+      },
+      "subtitle": "We specialize in practical, comfortable transfers for real needs — for example airport pickups with luggage, port transfers with tight schedules, and longer routes where comfort matters.",
+      "cards": {
+        "0": {
+          "title": "Airport transfers",
+          "desc": "Pickup & drop-off at El Prat, 24/7."
+        },
+        "1": {
+          "title": "Cruise port pickup",
+          "desc": "Direct transfers from/to Barcelona port."
+        },
+        "2": {
+          "title": "Long-distance trips",
+          "desc": "Comfortable vans for longer routes."
+        },
+        "3": {
+          "title": "City transfers",
+          "desc": "Hotels, attractions, and business trips."
         }
       }
     },
@@ -849,7 +903,15 @@
       "title": "¿Listo para reservar?",
       "subtitle": "Envíanos recogida + destino, fecha/hora, pasajeros y equipaje. Confirmamos rápidamente.",
       "call": "Llamar",
-      "whatsapp": "WhatsApp"
+      "whatsapp": "WhatsApp",
+      "ctaCall": "Call Now",
+      "ctaWhatsApp": "WhatsApp",
+      "ctaFaqs": "FAQs"
+    },
+    "intro": {
+      "kicker": "ABOUT TAXI VAN BARCELONA",
+      "title": "One simple goal: stress‑free group transfers",
+      "subtitle": "Whether you’re landing at Barcelona–El Prat Airport, heading to the Cruise Port, or planning a long-distance trip around Catalonia, our modern 4–8 seater taxi vans help you travel comfortably. Plus, our drivers are punctual and service‑minded—so you can relax while we handle the logistics."
     }
   },
   "test": {

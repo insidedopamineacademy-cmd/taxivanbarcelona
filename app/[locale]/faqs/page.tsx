@@ -175,30 +175,14 @@ export default async function FaqsPage() {
       />
 
       {/* HERO (premium black + gold vignette) */}
-      <section className="relative overflow-hidden" style={{ background: "rgb(10,10,10)" }}>
-        {/* Gold diagonal accents */}
-        <div
-          className="absolute inset-0 opacity-50"
-          aria-hidden="true"
-          style={{
-            backgroundImage:
-              "linear-gradient(135deg, rgba(217,167,64,0.92) 0%, rgba(217,167,64,0.92) 8%, transparent 8%, transparent 100%), linear-gradient(315deg, rgba(217,167,64,0.92) 0%, rgba(217,167,64,0.92) 8%, transparent 8%, transparent 100%)",
-            backgroundPosition: "left top, right bottom",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "420px 420px, 420px 420px",
-          }}
-        />
-        {/* Soft black→gold fade */}
-        <div
-          className="absolute inset-0"
-          aria-hidden="true"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 18% 22%, rgba(217,167,64,0.28), transparent 46%), radial-gradient(circle at 82% 78%, rgba(217,167,64,0.20), transparent 52%), linear-gradient(135deg, rgba(217,167,64,0.18) 0%, rgba(0,0,0,0) 45%), linear-gradient(0deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.62) 100%)",
-          }}
-        />
-
-        <div className="container-page relative py-16 md:py-24">
+      <section
+        className="relative overflow-hidden min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] md:min-h-0"
+        style={{
+          background:
+            "radial-gradient(circle at 20% 30%, rgba(255,200,80,0.12), transparent 40%), linear-gradient(180deg, #000000, #050505 60%, #0b0b0b)",
+        }}
+      >
+        <div className="container-page relative py-16 md:py-24 min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] md:min-h-0 flex items-center">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
               <p className="text-white/70 text-sm tracking-wide">Barcelona • Airport • Cruise Port • Long Distance</p>

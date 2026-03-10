@@ -83,7 +83,6 @@ export default function Header() {
   };
 
   const basePath = stripLocaleFromPath(pathname);
-  const isHome = basePath === "/";
 
   const hrefForLocale = (l: SupportedLocale) => {
     if (l === "en") return basePath || "/";
@@ -159,7 +158,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`site-header ${isHome ? "site-header--home" : ""} ${scrolled ? "is-scrolled" : ""}`}>
+    <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
       <div className="header-inner">
         {/* Logo */}
         <Link

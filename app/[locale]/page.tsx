@@ -181,13 +181,13 @@ export default async function HomePage() {
                 </p>
               </div>
             </div>
-            <div className="mt-6 flex flex-wrap items-center gap-2 text-[12px] text-white/70">
+            <div className="mt-6 flex flex-wrap items-center gap-2 text-[12px] text-white/60">
               {["Free cancellation", "Meet & greet included", "No hidden fees"].map((item) => (
                 <span
                   key={item}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3 py-1.5"
+                  className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5"
                 >
-                  <span aria-hidden className="text-[#fbbf24]">✓</span>
+                  <span aria-hidden className="text-[#fbbf24]/80">✓</span>
                   <span>{item}</span>
                 </span>
               ))}

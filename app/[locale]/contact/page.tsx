@@ -116,32 +116,14 @@ export default async function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       {/* HERO */}
-      <section className="relative overflow-hidden bg-black">
-        {/* diagonal gold accents */}
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(135deg, rgba(223,178,77,.95) 0%, rgba(223,178,77,.95) 10%, transparent 10%), linear-gradient(315deg, rgba(223,178,77,.95) 0%, rgba(223,178,77,.95) 10%, transparent 10%)",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "left top, right bottom",
-            backgroundSize: "420px 420px",
-            opacity: 0.55,
-          }}
-        />
-
-        {/* premium black → gold vignette */}
-        <div
-          aria-hidden
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage:
-              "radial-gradient(1200px 600px at 15% 10%, rgba(223,178,77,.18), transparent 55%), radial-gradient(900px 500px at 90% 90%, rgba(223,178,77,.12), transparent 55%), linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.55) 100%)",
-          }}
-        />
-
-        <div className="container-page relative py-14 md:py-24 pb-20">
+      <section
+        className="relative overflow-hidden min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] md:min-h-0"
+        style={{
+          background:
+            "radial-gradient(circle at 20% 30%, rgba(255,200,80,0.12), transparent 40%), linear-gradient(180deg, #000000, #050505 60%, #0b0b0b)",
+        }}
+      >
+        <div className="container-page relative py-14 md:py-24 pb-20 min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] md:min-h-0 flex items-center">
           <div className="max-w-3xl">
             <p className="text-white/70 text-sm font-semibold tracking-wide">
               {tr("hero.kicker", "Fast replies • Clear pricing • 24/7")}

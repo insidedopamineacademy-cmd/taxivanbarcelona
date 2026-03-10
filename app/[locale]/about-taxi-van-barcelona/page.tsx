@@ -117,22 +117,14 @@ export default async function AboutTaxiVanBarcelonaPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       {/* HERO */}
-      <section className="relative overflow-hidden bg-black">
-        {/* soft gold corner accents + subtle vignette */}
-        <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(1200px 600px at 15% 10%, rgba(223,178,77,.18), transparent 55%), radial-gradient(900px 500px at 90% 90%, rgba(223,178,77,.12), transparent 55%), linear-gradient(135deg, rgba(223,178,77,.95) 0%, rgba(223,178,77,.95) 10%, transparent 10%), linear-gradient(315deg, rgba(223,178,77,.95) 0%, rgba(223,178,77,.95) 10%, transparent 10%)",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "left top, right bottom, left top, right bottom",
-            backgroundSize: "auto, auto, 380px 380px, 380px 380px",
-            opacity: 0.95,
-          }}
-        />
-
-        <div className="container-page relative py-14 md:py-20">
+      <section
+        className="relative overflow-hidden min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] md:min-h-0"
+        style={{
+          background:
+            "radial-gradient(circle at 20% 30%, rgba(255,200,80,0.12), transparent 40%), linear-gradient(180deg, #000000, #050505 60%, #0b0b0b)",
+        }}
+      >
+        <div className="container-page relative py-14 md:py-20 min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] md:min-h-0 flex items-center pb-10 md:pb-0">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
             {/* copy */}
             <div className="lg:col-span-7">
