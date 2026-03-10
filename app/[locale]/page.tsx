@@ -144,7 +144,9 @@ export default async function HomePage() {
             <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
               <div className="order-1 lg:order-none lg:col-span-7">
                 <p className="text-[12px] tracking-[0.15em] uppercase text-[rgba(255,255,255,0.6)]">
-                  Barcelona • Airport & Cruise Transfers • 4–8 Passenger Vans • 24/7 Service
+                  {t("home.hero.eyebrow", {
+                    default: "Barcelona • 4–8 seater vans • 24/7 support",
+                  })}
                 </p>
                 <h1 className="mt-4 text-white text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
                   {heroTitleAccent}
@@ -182,7 +184,11 @@ export default async function HomePage() {
               </div>
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-2 text-[12px] text-white/60">
-              {["Free cancellation", "Meet & greet included", "No hidden fees"].map((item) => (
+              {[
+                t("home.hero.trustRow.freeCancellation", { default: "Free cancellation" }),
+                t("home.hero.trustRow.meetGreet", { default: "Meet & greet included" }),
+                t("home.hero.trustRow.noHiddenFees", { default: "No hidden fees" }),
+              ].map((item) => (
                 <span
                   key={item}
                   className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5"
@@ -197,10 +203,20 @@ export default async function HomePage() {
       </section>
 
       <section className="container-page py-10 md:py-12">
-        <h2 className="text-2xl md:text-3xl font-extrabold">Quick Facts</h2>
-        <ul className="mt-4 list-disc pl-6 space-y-2 text-gray-700 leading-7">
-          {quickFacts.items.map((item) => (
-            <li key={item}>{item}</li>
+        <h2 className="text-2xl md:text-3xl font-extrabold">{quickFacts.title}</h2>
+        <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {quickFacts.items.map((item, index) => (
+            <li
+              key={item}
+              className="rounded-2xl border border-black/10 bg-white/90 px-4 py-3 text-gray-700 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            >
+              <span className="inline-flex items-center gap-2 text-[15px] leading-7">
+                <span aria-hidden className="text-[#fbbf24]">
+                  {["✓", "🚐", "🧭", "💶", "💬"][index] || "✓"}
+                </span>
+                <span>{item}</span>
+              </span>
+            </li>
           ))}
         </ul>
       </section>

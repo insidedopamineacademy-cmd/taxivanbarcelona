@@ -156,10 +156,20 @@ export default async function AirportTaxiPage() {
       </section>
 
       <section className="container-page py-10 md:py-12">
-        <h2 className="text-2xl md:text-3xl font-extrabold">Quick Facts</h2>
-        <ul className="mt-4 list-disc pl-6 space-y-2 text-gray-700 leading-7">
-          {quickFacts.items.map((item) => (
-            <li key={item}>{item}</li>
+        <h2 className="text-2xl md:text-3xl font-extrabold">{quickFacts.title}</h2>
+        <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {quickFacts.items.map((item, index) => (
+            <li
+              key={item}
+              className="rounded-2xl border border-black/10 bg-white/90 px-4 py-3 text-gray-700 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            >
+              <span className="inline-flex items-center gap-2 text-[15px] leading-7">
+                <span aria-hidden className="text-[#fbbf24]">
+                  {["✓", "🚐", "⏱️", "👶", "💬"][index] || "✓"}
+                </span>
+                <span>{item}</span>
+              </span>
+            </li>
           ))}
         </ul>
       </section>
@@ -357,14 +367,14 @@ export default async function AirportTaxiPage() {
             href={`${prefix}/cruise-port-transfer-barcelona`}
             className="underline underline-offset-4 hover:opacity-80"
           >
-            Barcelona cruise port pickup service
+            {t("links.cruise")}
           </Link>{" "}
           and{" "}
           <Link
             href={`${prefix}/long-distance-transfers`}
             className="underline underline-offset-4 hover:opacity-80"
           >
-            long-distance taxi transfers from Barcelona
+            {t("links.longDistance")}
           </Link>
           .
         </p>

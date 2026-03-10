@@ -15,6 +15,11 @@
         "meetGreet": "Meet & greet",
         "airportWait": "1-hour airport wait",
         "multilingual": "Multilingual drivers"
+      },
+      "trustRow": {
+        "freeCancellation": "Free cancellation",
+        "meetGreet": "Meet & greet included",
+        "noHiddenFees": "No hidden fees"
       }
     },
     "popularServices": {
@@ -254,7 +259,8 @@
       "intro": "Also offering Cruise Port Transfers and long-distance trips — check our services:",
       "cruise": "Cruise Port Pickup",
       "faqs": "Frequently Asked Questions",
-      "contact": "Contact"
+      "contact": "Contact",
+      "longDistance": "Long-distance transfers"
     },
     "seo": {
       "title": "Barcelona Airport Taxi Van — What to expect",
@@ -274,163 +280,144 @@
     }
   },
   "cruise": {
-  "hero": {
-    "eyebrow": "Barcelona Cruise Port • Moll Adossat & Port Vell • 24/7",
-    "title": "Barcelona Cruise Port Taxi — Transfers & City Tours",
-    "desc": "Arriving by cruise ship? Book a reliable taxi van pickup from Barcelona cruise terminals with fixed pricing, multilingual drivers, and optional Barcelona city tours—returning you to the ship on time.",
-    "call": "Call",
-    "whatsapp": "WhatsApp",
-
-    "mobileCta": "Fast booking on WhatsApp",
-    "imageAlt": "Cruise port pickup in Barcelona with taxi van",
-    "imageCaption": "Barcelona Cruise Port – Moll Adossat",
-
-    "features": {
-      "tracking": "✓ Cruise schedule tracking",
-      "door": "✓ Door-to-door service",
-      "pricing": "✓ Fixed pricing",
-      "luggage": "✓ Luggage space for groups",
-      "fixed": "✓ Fixed rates"
-    }
-  },
-
-  "includes": {
-    "title": "What’s Included in Your Cruise Transfer",
-
-    "i1": "🚐 4–8 seater vans",
-    "i2": "🧳 Large luggage capacity",
-    "i3": "💰 Fixed pricing confirmed before travel",
-    "i4": "👶 Child seats available upon request",
-    "i5": "📍 Door-to-door service",
-
-    "items": {
-      "vans": {
-        "title": "4–8 seater vans",
-        "desc": "Comfortable taxis for families and cruise groups."
-      },
-      "luggage": {
-        "title": "Large luggage capacity",
-        "desc": "Space for suitcases and cruise luggage."
-      },
-      "pricing": {
-        "title": "Fixed pricing confirmed before travel",
-        "desc": "Confirmed before pickup—no surprises."
-      },
-      "child": {
-        "title": "Child seats available upon request",
-        "desc": "Available on request."
-      },
-      "door": {
-        "title": "Door-to-door service",
-        "desc": "Cruise terminal → hotel, airport, or tour stop."
+    "hero": {
+      "eyebrow": "Barcelona Cruise Port • Moll Adossat & Port Vell • 24/7",
+      "title": "Barcelona Cruise Port Taxi — Transfers & City Tours",
+      "desc": "Arriving by cruise ship? Book a reliable taxi van pickup from Barcelona cruise terminals with fixed pricing, multilingual drivers, and optional Barcelona city tours—returning you to the ship on time.",
+      "call": "Call",
+      "whatsapp": "WhatsApp",
+      "mobileCta": "Fast booking on WhatsApp",
+      "imageAlt": "Cruise port pickup in Barcelona with taxi van",
+      "imageCaption": "Barcelona Cruise Port – Moll Adossat",
+      "features": {
+        "tracking": "✓ Cruise schedule tracking",
+        "door": "✓ Door-to-door service",
+        "pricing": "✓ Fixed pricing",
+        "luggage": "✓ Luggage space for groups",
+        "fixed": "✓ Fixed rates"
       }
-    }
-  },
-
-  "why": {
-    "title": "Why Choose Our Cruise Port Taxi Service?",
-    "desc": "Cruise arrivals can be unpredictable—but your transfer shouldn’t be. We monitor ship schedules and adapt pickup times so your driver is ready when you disembark.",
-
-    "p1": "Cruise arrivals can be unpredictable—but your transfer shouldn’t be. We monitor ship schedules in real time and adjust pickup accordingly, ensuring your driver is ready when you disembark.",
-    "b1": "✅ Direct pickup from Moll Adossat & Port Vell",
-    "b2": "✅ 4 to 8-seater vans for families and groups",
-    "b3": "✅ Plenty of space for cruise luggage",
-    "b4": "✅ Professional, multilingual drivers",
-    "b5": "✅ Fixed pricing — no surprises",
-
-    "items": {
-      "pickup": "Direct pickup from Moll Adossat & Port Vell",
-      "vans": "4–8 seater vans for families and groups",
-      "space": "Plenty of space for cruise luggage",
-      "drivers": "Professional, multilingual drivers",
-      "pricing": "Fixed pricing — no surprises"
-    }
-  },
-
-  "where": {
-    "title": "Where We Take You",
-
-    "i1": "• Hotels & apartments across Barcelona",
-    "i2": "• Barcelona Airport (El Prat)",
-    "i3": "• Train stations (Sants, França)",
-    "i4": "• Long-distance trips across Spain",
-
-    "items": {
-      "hotels": "Hotels & apartments across Barcelona",
-      "airport": "Barcelona Airport (El Prat)",
-      "stations": "Train stations (Sants, França)",
-      "long": "Long-distance trips across Catalonia"
     },
-    "call": "Call",
-    "whatsapp": "WhatsApp"
-  },
-
-  "tours": {
-    "title": "Barcelona City Tours for Cruise Passengers",
-    "desc": "Only in Barcelona for a few hours? Book a flexible city tour directly from the cruise terminal. We tailor the route to your schedule and bring you back to the ship on time.",
-
-    "p1": "Only in Barcelona for a few hours? Book a city tour directly from the cruise terminal. We pick you up at Moll Adossat or Port Vell and tailor the route to your schedule—then bring you back to the ship on time.",
-    "b1": "• Flexible pickup at the cruise terminal",
-    "b2": "• Custom routes: Sagrada Família, Gothic Quarter, Montjuïc, beaches",
-    "b3": "• Comfortable 4–8 seater vans with luggage space",
-    "b4": "• Fixed pricing confirmed before you start",
-
-    "ideasTitle": "Popular tour ideas",
-    "i1": "⭐ Highlights tour (2–3 hours)",
-    "i2": "🕓 Half-day city tour (4 hours)",
-    "i3": "🛍️ Shopping + sightseeing (La Roca Village on request)",
-    "i4": "👨‍👩‍👧‍👦 Family-friendly routes (child seats available)",
-
-    "items": {
-      "highlights": "Highlights tour (2–3 hours)",
-      "halfday": "Half-day city tour (4 hours)",
-      "shopping": "Shopping & sightseeing (La Roca Village on request)",
-      "family": "Family-friendly routes (child seats available)"
-    },
-    "note": "Tell us your ship name, docking time, and must-see places—we’ll suggest the best plan."
-  },
-
-  "faq": {
-    "title": "Frequently Asked Questions",
-
-    "q1": "Do you offer fixed pricing for cruise port transfers?",
-    "a1": "Yes. We confirm a clear, fixed price before pickup based on passengers and luggage.",
-    "q2": "Where will the driver meet us at the cruise terminal?",
-    "a2": "We confirm the exact meeting point at Moll Adossat or Port Vell and share instructions by WhatsApp.",
-    "q3": "Can we do a city tour and still return to the ship on time?",
-    "a3": "Absolutely. City tours are planned around your docking schedule so you return comfortably on time.",
-    "q4": "How many passengers fit in a cruise taxi van?",
-    "a4": "Our vans typically accommodate 4–8 passengers depending on luggage needs.",
-
-    "items": {
-      "pricing": {
-        "q": "Do you offer fixed pricing for cruise port transfers?",
-        "a": "Yes. We confirm a clear price before pickup based on passengers and luggage."
-      },
-      "meeting": {
-        "q": "Where will the driver meet us at the cruise terminal?",
-        "a": "We confirm the exact terminal and meeting point in advance and send instructions via WhatsApp."
-      },
-      "tour": {
-        "q": "Can we do a city tour and still return to the ship on time?",
-        "a": "Yes. We plan routes around your ship’s schedule to ensure timely return."
-      },
-      "capacity": {
-        "q": "How many passengers fit in a cruise taxi van?",
-        "a": "Most cruise transfers accommodate 4–8 passengers depending on luggage."
+    "includes": {
+      "title": "What’s Included in Your Cruise Transfer",
+      "i1": "🚐 4–8 seater vans",
+      "i2": "🧳 Large luggage capacity",
+      "i3": "💰 Fixed pricing confirmed before travel",
+      "i4": "👶 Child seats available upon request",
+      "i5": "📍 Door-to-door service",
+      "items": {
+        "vans": {
+          "title": "4–8 seater vans",
+          "desc": "Comfortable taxis for families and cruise groups."
+        },
+        "luggage": {
+          "title": "Large luggage capacity",
+          "desc": "Space for suitcases and cruise luggage."
+        },
+        "pricing": {
+          "title": "Fixed pricing confirmed before travel",
+          "desc": "Confirmed before pickup—no surprises."
+        },
+        "child": {
+          "title": "Child seats available upon request",
+          "desc": "Available on request."
+        },
+        "door": {
+          "title": "Door-to-door service",
+          "desc": "Cruise terminal → hotel, airport, or tour stop."
+        }
       }
+    },
+    "why": {
+      "title": "Why Choose Our Cruise Port Taxi Service?",
+      "desc": "Cruise arrivals can be unpredictable—but your transfer shouldn’t be. We monitor ship schedules and adapt pickup times so your driver is ready when you disembark.",
+      "p1": "Cruise arrivals can be unpredictable—but your transfer shouldn’t be. We monitor ship schedules in real time and adjust pickup accordingly, ensuring your driver is ready when you disembark.",
+      "b1": "✅ Direct pickup from Moll Adossat & Port Vell",
+      "b2": "✅ 4 to 8-seater vans for families and groups",
+      "b3": "✅ Plenty of space for cruise luggage",
+      "b4": "✅ Professional, multilingual drivers",
+      "b5": "✅ Fixed pricing — no surprises",
+      "items": {
+        "pickup": "Direct pickup from Moll Adossat & Port Vell",
+        "vans": "4–8 seater vans for families and groups",
+        "space": "Plenty of space for cruise luggage",
+        "drivers": "Professional, multilingual drivers",
+        "pricing": "Fixed pricing — no surprises"
+      }
+    },
+    "where": {
+      "title": "Where We Take You",
+      "i1": "• Hotels & apartments across Barcelona",
+      "i2": "• Barcelona Airport (El Prat)",
+      "i3": "• Train stations (Sants, França)",
+      "i4": "• Long-distance trips across Spain",
+      "items": {
+        "hotels": "Hotels & apartments across Barcelona",
+        "airport": "Barcelona Airport (El Prat)",
+        "stations": "Train stations (Sants, França)",
+        "long": "Long-distance trips across Catalonia"
+      },
+      "call": "Call",
+      "whatsapp": "WhatsApp"
+    },
+    "tours": {
+      "title": "Barcelona City Tours for Cruise Passengers",
+      "desc": "Only in Barcelona for a few hours? Book a flexible city tour directly from the cruise terminal. We tailor the route to your schedule and bring you back to the ship on time.",
+      "p1": "Only in Barcelona for a few hours? Book a city tour directly from the cruise terminal. We pick you up at Moll Adossat or Port Vell and tailor the route to your schedule—then bring you back to the ship on time.",
+      "b1": "• Flexible pickup at the cruise terminal",
+      "b2": "• Custom routes: Sagrada Família, Gothic Quarter, Montjuïc, beaches",
+      "b3": "• Comfortable 4–8 seater vans with luggage space",
+      "b4": "• Fixed pricing confirmed before you start",
+      "ideasTitle": "Popular tour ideas",
+      "i1": "⭐ Highlights tour (2–3 hours)",
+      "i2": "🕓 Half-day city tour (4 hours)",
+      "i3": "🛍️ Shopping + sightseeing (La Roca Village on request)",
+      "i4": "👨‍👩‍👧‍👦 Family-friendly routes (child seats available)",
+      "items": {
+        "highlights": "Highlights tour (2–3 hours)",
+        "halfday": "Half-day city tour (4 hours)",
+        "shopping": "Shopping & sightseeing (La Roca Village on request)",
+        "family": "Family-friendly routes (child seats available)"
+      },
+      "note": "Tell us your ship name, docking time, and must-see places—we’ll suggest the best plan."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Do you offer fixed pricing for cruise port transfers?",
+      "a1": "Yes. We confirm a clear, fixed price before pickup based on passengers and luggage.",
+      "q2": "Where will the driver meet us at the cruise terminal?",
+      "a2": "We confirm the exact meeting point at Moll Adossat or Port Vell and share instructions by WhatsApp.",
+      "q3": "Can we do a city tour and still return to the ship on time?",
+      "a3": "Absolutely. City tours are planned around your docking schedule so you return comfortably on time.",
+      "q4": "How many passengers fit in a cruise taxi van?",
+      "a4": "Our vans typically accommodate 4–8 passengers depending on luggage needs.",
+      "items": {
+        "pricing": {
+          "q": "Do you offer fixed pricing for cruise port transfers?",
+          "a": "Yes. We confirm a clear price before pickup based on passengers and luggage."
+        },
+        "meeting": {
+          "q": "Where will the driver meet us at the cruise terminal?",
+          "a": "We confirm the exact terminal and meeting point in advance and send instructions via WhatsApp."
+        },
+        "tour": {
+          "q": "Can we do a city tour and still return to the ship on time?",
+          "a": "Yes. We plan routes around your ship’s schedule to ensure timely return."
+        },
+        "capacity": {
+          "q": "How many passengers fit in a cruise taxi van?",
+          "a": "Most cruise transfers accommodate 4–8 passengers depending on luggage."
+        }
+      }
+    },
+    "links": {
+      "portInfoPrefix": "Need official port information? Visit",
+      "portInfoName": "Port de Barcelona",
+      "airport": "Airport Taxi",
+      "faqs": "FAQs",
+      "contact": "Contact",
+      "connectedTripsPrefix": "For connected trips, see our"
     }
   },
-
-  "links": {
-    "portInfoPrefix": "Need official port information? Visit",
-    "portInfoName": "Port de Barcelona",
-    "airport": "Airport Taxi",
-    "faqs": "FAQs",
-    "contact": "Contact"
-  }
-}
-  ,
   "long": {
     "hero": {
       "eyebrow": "Barcelona • Catalonia • Spain",
@@ -469,6 +456,24 @@
         "portaventura": "PortAventura",
         "montserrat": "Montserrat",
         "laroca": "La Roca Village"
+      },
+      "cards": {
+        "bcnAirport": "Barcelona El Prat Airport",
+        "gironaAirport": "Girona Airport",
+        "reusAirport": "Reus Airport, Tarragona",
+        "cityCenter": "Barcelona City Center",
+        "sants": "Sants Station (AVE / Renfe)",
+        "port": "Port of Barcelona / Cruise Terminal",
+        "sitges": "Sitges (Coastal Getaway)",
+        "laroca": "La Roca Village (Shopping Outlet)",
+        "andorra": "Andorra (Day Trips)",
+        "montserratMonastery": "Montserrat Monastery",
+        "portaventuraFerrari": "PortAventura & Ferrari Land",
+        "costabravaTowns": "Costa Brava (Blanes, Calella, Cadaqués…)",
+        "stadium": "Camp Nou / Estadi Olímpic",
+        "hotelsResorts": "Hotels & Resorts (W, Majestic, etc.)",
+        "castelldefels": "Castelldefels (Beach & Villas)",
+        "moreDestinations": "Tarragona, Girona, Lloret & more"
       }
     },
     "hourly": {
@@ -554,7 +559,8 @@
       "intro": "Need airport or cruise pickup too? Explore:",
       "airport": "Airport Taxi",
       "cruise": "Cruise Port Pickup",
-      "contact": "Contact"
+      "contact": "Contact",
+      "faqs": "FAQs"
     }
   },
   "privateTransfers": {
@@ -762,10 +768,22 @@
       "title": "What we do",
       "subtitle": "We specialize in practical, comfortable transfers for real needs — for example airport pickups with luggage, port transfers with tight schedules, and longer routes where comfort matters.",
       "cards": {
-        "0": { "title": "Airport transfers", "desc": "Pickup & drop-off at El Prat, 24/7." },
-        "1": { "title": "Cruise port pickup", "desc": "Direct transfers from/to Barcelona port." },
-        "2": { "title": "Long-distance trips", "desc": "Comfortable vans for longer routes." },
-        "3": { "title": "City transfers", "desc": "Hotels, attractions, and business trips." }
+        "0": {
+          "title": "Airport transfers",
+          "desc": "Pickup & drop-off at El Prat, 24/7."
+        },
+        "1": {
+          "title": "Cruise port pickup",
+          "desc": "Direct transfers from/to Barcelona port."
+        },
+        "2": {
+          "title": "Long-distance trips",
+          "desc": "Comfortable vans for longer routes."
+        },
+        "3": {
+          "title": "City transfers",
+          "desc": "Hotels, attractions, and business trips."
+        }
       }
     },
     "cta": {
@@ -866,5 +884,112 @@
   },
   "test": {
     "label": "EN OK"
+  },
+  "faqs": {
+    "meta": {
+      "title": "FAQs | Taxi Van Barcelona",
+      "description": "Answers to common questions about Taxi Van Barcelona: pricing, booking, airport and cruise pickups, luggage, child seats, long-distance trips, and more.",
+      "ogTitle": "FAQs | Taxi Van Barcelona",
+      "ogDescription": "Pricing, booking, airport transfers, cruise port pickup, long-distance trips, child seats, luggage, and more — Taxi Van Barcelona FAQs."
+    },
+    "hero": {
+      "kicker": "Barcelona • Airport • Cruise Port • Long Distance",
+      "title": "FAQs — Taxi Van Barcelona",
+      "subtitle": "Quick answers about pricing, booking 4–8 passenger vans, luggage space, child seats, airport transfers, cruise port pickup, and long-distance trips.",
+      "ctaCall": "Call Now",
+      "ctaWhatsApp": "WhatsApp",
+      "ctaContact": "Contact",
+      "trust": {
+        "fastReplies": "Fast replies",
+        "clearQuotes": "Clear quotes",
+        "availability": "24/7 availability",
+        "groupVans": "Group-friendly vans"
+      }
+    },
+    "content": {
+      "title": "Common Questions",
+      "subtitle": "We’ve answered the questions we get most from international travelers booking taxi vans in Barcelona.",
+      "shortLabel": "Short answer:",
+      "detailsLabel": "Details:"
+    },
+    "items": {
+      "q1": {
+        "q": "How much is a taxi van from Barcelona Airport to the city center?",
+        "short": "Pricing depends on your exact destination, time, and vehicle size. We confirm fixed pricing before travel so you know the total in advance.",
+        "details": "To avoid surprises, send your terminal and destination on WhatsApp and we’ll confirm the price before your trip."
+      },
+      "q2": {
+        "q": "What payment methods do you accept?",
+        "short": "We accept cash and major credit or debit cards, including Visa, Mastercard, and Amex. You can pay in cash to the driver or use a secure online card link.",
+        "details": "For some reservations, we may take a small booking fee to confirm the ride, and the remaining amount can be paid to the driver."
+      },
+      "q3": {
+        "q": "What is your cancellation policy?",
+        "short": "More than 24 hours before pickup is free cancellation. Within 24 hours, 50% is refundable, and within 3 hours it is not refundable.",
+        "details": "If your plans change, message us as early as possible and we’ll help you choose the best option."
+      },
+      "q4": {
+        "q": "Can I book a 7 or 8 seater taxi van in advance?",
+        "short": "Yes, and advance booking is recommended for 7 or 8 seater vans. This is especially useful for airport arrivals, cruise days, weekends, and early pickups.",
+        "details": "Share your pickup point, time, passenger count, and luggage details, and we’ll confirm availability quickly."
+      },
+      "q5": {
+        "q": "Do you offer long-distance taxi trips outside Barcelona?",
+        "short": "Yes, we provide long-distance transfers outside Barcelona. We regularly serve routes across Catalonia and nearby destinations.",
+        "details": "Popular routes include Sitges, Girona, Tarragona, Costa Brava, and Salou. Share your route and timing and we’ll confirm a suitable van and clear quote."
+      },
+      "q6": {
+        "q": "Is your service available 24/7?",
+        "short": "Yes, our service operates 24/7. We cover airport transfers, cruise port pickup, city rides, and long-distance trips at all hours.",
+        "details": "If you have a late arrival or early flight, WhatsApp is the fastest way to confirm."
+      },
+      "q7": {
+        "q": "Are your drivers English-speaking?",
+        "short": "Yes, our drivers can communicate clearly in English. They work with international travelers every day.",
+        "details": "We also support multiple languages whenever possible, so you can travel with confidence."
+      },
+      "q8": {
+        "q": "Can you provide child seats or booster seats?",
+        "short": "Yes, child seats and boosters are available on request. We can prepare the right setup when informed at booking time.",
+        "details": "Tell us the child’s age or height/weight and how many seats you need, and we’ll arrange the correct option."
+      },
+      "q9": {
+        "q": "How much luggage can your vans hold?",
+        "short": "Our 4–8 passenger vans are selected for both comfort and luggage capacity. Exact capacity depends on passenger count and suitcase sizes.",
+        "details": "Send a quick note like “6 passengers + 6 large suitcases” and we’ll confirm the best vehicle."
+      },
+      "q10": {
+        "q": "Do you offer pickup from the Barcelona Cruise Port?",
+        "short": "Yes, we provide pickup from Barcelona Cruise Port terminals. We transfer directly to hotels, the airport, or any address.",
+        "details": "If your ship timing changes, message us and we’ll adjust pickup smoothly."
+      },
+      "q11": {
+        "q": "What areas do you serve?",
+        "short": "We serve Barcelona city, Barcelona Airport (El Prat), cruise terminals, and destinations across Catalonia. Coverage includes both local and regional routes.",
+        "details": "If you’re staying outside the city or planning a day trip, share the route and we’ll confirm availability and pricing."
+      },
+      "q12": {
+        "q": "How can I book a taxi van with you?",
+        "short": "The fastest booking method is WhatsApp. Send pickup and drop-off, date and time, passengers, and luggage details.",
+        "details": "You can also call us or use the Contact page. We confirm all details clearly so you can relax before the trip."
+      },
+      "q13": {
+        "q": "Do you offer taxi transfers to La Roca Village?",
+        "short": "Yes, we offer transfers to La Roca Village for shopping trips. You can book one-way or round-trip service.",
+        "details": "If you want a return pickup, tell us your preferred return time or expected stay duration and we’ll arrange it."
+      },
+      "q14": {
+        "q": "Are your vans wheelchair-accessible?",
+        "short": "Wheelchair-accessible options may be available on request, depending on vehicle availability and your needs. We review each request to confirm the right setup.",
+        "details": "Message us with wheelchair type and passenger details so we can confirm availability and the most suitable vehicle."
+      }
+    },
+    "cta": {
+      "title": "Still unsure about your booking?",
+      "subtitle": "Send your pickup, drop-off, date/time, passengers, and luggage — we’ll reply with a clear quote and quick confirmation.",
+      "call": "Call",
+      "whatsapp": "WhatsApp",
+      "contact": "Contact Page"
+    }
   }
 }

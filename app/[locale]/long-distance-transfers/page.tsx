@@ -168,10 +168,20 @@ export default async function LongDistanceTransfersPage() {
       </section>
 
       <section className="container-page py-10 md:py-12">
-        <h2 className="text-2xl md:text-3xl font-extrabold">Quick Facts</h2>
-        <ul className="mt-4 list-disc pl-6 space-y-2 text-gray-700 leading-7">
-          {quickFacts.items.map((item) => (
-            <li key={item}>{item}</li>
+        <h2 className="text-2xl md:text-3xl font-extrabold">{quickFacts.title}</h2>
+        <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {quickFacts.items.map((item, index) => (
+            <li
+              key={item}
+              className="rounded-2xl border border-black/10 bg-white/90 px-4 py-3 text-gray-700 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+            >
+              <span className="inline-flex items-center gap-2 text-[15px] leading-7">
+                <span aria-hidden className="text-[#fbbf24]">
+                  {["✓", "🗺️", "🚐", "💶", "💬"][index] || "✓"}
+                </span>
+                <span>{item}</span>
+              </span>
+            </li>
           ))}
         </ul>
       </section>
@@ -206,22 +216,22 @@ export default async function LongDistanceTransfersPage() {
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: "✈️", label: "Barcelona El Prat Airport" },
-              { icon: "✈️", label: "Girona Airport" },
-              { icon: "✈️", label: "Reus Airport, Tarragona" },
-              { icon: "🏙️", label: "Barcelona City Center" },
-              { icon: "🚆", label: "Sants Station (AVE / Renfe)" },
-              { icon: "🛳️", label: "Port of Barcelona / Cruise Terminal" },
-              { icon: "🏖️", label: "Sitges (Coastal Getaway)" },
-              { icon: "🛍️", label: "La Roca Village (Shopping Outlet)" },
-              { icon: "🏔️", label: "Andorra (Day Trips)" },
-              { icon: "🏛️", label: "Montserrat Monastery" },
-              { icon: "🎢", label: "PortAventura & Ferrari Land" },
-              { icon: "🌊", label: "Costa Brava (Blanes, Calella, Cadaqués…)" },
-              { icon: "🏟️", label: "Camp Nou / Estadi Olímpic" },
-              { icon: "🏨", label: "Hotels & Resorts (W, Majestic, etc.)" },
-              { icon: "🌴", label: "Castelldefels (Beach & Villas)" },
-              { icon: "🏘️", label: "Tarragona, Girona, Lloret & more" },
+              { icon: "✈️", label: tr("areas.cards.bcnAirport", "Barcelona El Prat Airport") },
+              { icon: "✈️", label: tr("areas.cards.gironaAirport", "Girona Airport") },
+              { icon: "✈️", label: tr("areas.cards.reusAirport", "Reus Airport, Tarragona") },
+              { icon: "🏙️", label: tr("areas.cards.cityCenter", "Barcelona City Center") },
+              { icon: "🚆", label: tr("areas.cards.sants", "Sants Station (AVE / Renfe)") },
+              { icon: "🛳️", label: tr("areas.cards.port", "Port of Barcelona / Cruise Terminal") },
+              { icon: "🏖️", label: tr("areas.cards.sitges", "Sitges (Coastal Getaway)") },
+              { icon: "🛍️", label: tr("areas.cards.laroca", "La Roca Village (Shopping Outlet)") },
+              { icon: "🏔️", label: tr("areas.cards.andorra", "Andorra (Day Trips)") },
+              { icon: "🏛️", label: tr("areas.cards.montserratMonastery", "Montserrat Monastery") },
+              { icon: "🎢", label: tr("areas.cards.portaventuraFerrari", "PortAventura & Ferrari Land") },
+              { icon: "🌊", label: tr("areas.cards.costabravaTowns", "Costa Brava (Blanes, Calella, Cadaqués…)") },
+              { icon: "🏟️", label: tr("areas.cards.stadium", "Camp Nou / Estadi Olímpic") },
+              { icon: "🏨", label: tr("areas.cards.hotelsResorts", "Hotels & Resorts (W, Majestic, etc.)") },
+              { icon: "🌴", label: tr("areas.cards.castelldefels", "Castelldefels (Beach & Villas)") },
+              { icon: "🏘️", label: tr("areas.cards.moreDestinations", "Tarragona, Girona, Lloret & more") },
             ].map((a) => (
               <div
                 key={a.label}
@@ -511,7 +521,7 @@ export default async function LongDistanceTransfersPage() {
             href={`${prefix}/airport-taxi-barcelona`}
             className="underline underline-offset-4 hover:opacity-80"
           >
-            Barcelona airport taxi van transfers
+            {tr("links.airport", "Airport Taxi")}
           </Link>
           .
         </p>
@@ -521,7 +531,7 @@ export default async function LongDistanceTransfersPage() {
             href={`${prefix}/faqs`}
             className="btn px-6 py-3 rounded-full border border-black/15 hover:bg-black/5 font-semibold"
           >
-            FAQs
+            {tr("links.faqs", "FAQs")}
           </Link>
 
           <Link
