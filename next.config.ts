@@ -7,16 +7,6 @@ const nextConfig: NextConfig = {
   images: {
     qualities: [75, 85],
   },
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.taxivanbarcelona.com" }],
-        destination: "https://taxivanbarcelona.com/:path*",
-        permanent: true,
-      },
-    ];
-  },
 };
 
 export default withNextIntl(nextConfig);
