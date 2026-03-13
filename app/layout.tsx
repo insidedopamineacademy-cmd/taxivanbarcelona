@@ -1,7 +1,8 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import Script from "next/script";
-import { BRAND, languageAlternates, SITE_URL } from "@/config/brand";
+import { getLocale } from "next-intl/server";
+import { BRAND, languageAlternates, normalizeLocale, SITE_URL } from "@/config/brand";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -14,9 +15,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  let htmlLang = "en";
+  try {
+    htmlLang = normalizeLocale(await getLocale());
+  } catch {
+    htmlLang = "en";
+  }
+
   return (
-    <html suppressHydrationWarning>
+    <html lang={htmlLang} suppressHydrationWarning>
       <body className="min-h-screen bg-white text-gray-900 antialiased">
         {/* Google Tag Manager */}
         <Script id="gtm" strategy="afterInteractive">
