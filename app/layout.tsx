@@ -2,17 +2,14 @@ import "@/styles/globals.css";
 import type { Metadata } from "next";
 import Script from "next/script";
 import { getLocale } from "next-intl/server";
-import { BRAND, languageAlternates, normalizeLocale, SITE_URL } from "@/config/brand";
+import { BRAND, metadataAlternates, normalizeLocale, SITE_URL } from "@/config/brand";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Taxi Van Barcelona | Airport, Cruise & Long-Distance Transfers",
   description:
     "Book a spacious taxi van in Barcelona for airport transfers, cruise port pickup, and long-distance trips.",
-  alternates: {
-    canonical: languageAlternates("/").en,
-    languages: languageAlternates("/"),
-  },
+  alternates: metadataAlternates("en", "/"),
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {

@@ -56,8 +56,12 @@ export function languageAlternates(path: string): Record<AppLocale, string> {
 }
 
 export function metadataAlternates(locale: AppLocale, path: string) {
+  const languages = languageAlternates(path);
   return {
     canonical: localizedAbsoluteUrl(locale, path),
-    languages: languageAlternates(path),
+    languages: {
+      ...languages,
+      "x-default": languages.en,
+    },
   };
 }
