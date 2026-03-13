@@ -31,6 +31,9 @@ export function normalizeLocale(locale: string): AppLocale {
 
 export function withLocalePath(locale: AppLocale, path: string): string {
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  if (locale === "en") {
+    return normalizedPath;
+  }
   return `/${locale}${normalizedPath === "/" ? "" : normalizedPath}`;
 }
 
